@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class SnapView: UIView {
+class ComplexView: UIView {
     
     var sv: UIScrollView!
     var contentView: UIView!
@@ -52,7 +52,7 @@ class SnapView: UIView {
         
         self.sv = UIScrollView.init(frame: .zero)
         self.sv.backgroundColor = .white
-        self.sv.showsVerticalScrollIndicator = false        // 隐藏滑动条
+//        self.sv.showsVerticalScrollIndicator = false        // 隐藏滑动条
         self.addSubview(self.sv)
         
         self.contentView = UIView.init(frame: .zero)
@@ -160,12 +160,6 @@ class SnapView: UIView {
             make.height.greaterThanOrEqualTo(self.tb.contentSize.height)
         }
         
-        if self.tb.contentSize.height == 0 {
-            self.tLabel.snp.makeConstraints { (make) in
-                make.width.height.equalTo(0)
-            }
-        }
-        
         // 更新vcv约束
         self.vcv.snp.makeConstraints { (make) in
             make.top.greaterThanOrEqualTo(self.hcv.snp_bottom).offset(self.tb.contentSize.height + 10)
@@ -186,7 +180,7 @@ class SnapView: UIView {
 }
 
 // MARK: - UITableView  delegate & dateSource
-extension SnapView: UITableViewDelegate, UITableViewDataSource {
+extension ComplexView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
@@ -209,7 +203,7 @@ extension SnapView: UITableViewDelegate, UITableViewDataSource {
 }
 
 // MARK: - UICollectionView delegate & dataSource
-extension SnapView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ComplexView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.isEqual(self.hcv) {

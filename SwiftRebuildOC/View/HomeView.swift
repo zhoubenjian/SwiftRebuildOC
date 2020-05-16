@@ -19,6 +19,9 @@ class HomeView: UIView {
     var skipToCVClosures: SkipToCVClosures!
     typealias SkipToCXClosures = () -> ()
     var skipToCXClosures: SkipToCXClosures!
+    typealias SkipToGVClosures = () -> Void
+    var skipToGVClosures: SkipToGVClosures!
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,6 +36,7 @@ class HomeView: UIView {
         self.homeTableView.backgroundColor = .white
         self.homeTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)  // 补全分割线
         self.homeTableView.tableFooterView = UIView.init(frame: CGRect.zero)                    // 隐藏无数据行分割线
+        // 注册
         self.homeTableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "identifier")
         self.homeTableView.delegate = self
         self.homeTableView.dataSource = self
@@ -87,9 +91,13 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
             
             self.skipToCVClosures(cell.titleLabel.text!)
             
-        } else {
+        } else if indexPath.row == 7 {
             
             self.skipToCXClosures()
+            
+        } else {
+            
+            self.skipToGVClosures()
             
         }
         

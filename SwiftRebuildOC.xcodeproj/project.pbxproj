@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5EBB52A315389A64408F83CC /* Pods_SwiftRebuildOC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D4A1A2F5EFCE6BFED116DF /* Pods_SwiftRebuildOC.framework */; };
+		E456A61B246F91AF008203AB /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E456A61A246F91AF008203AB /* GroupTableViewCell.swift */; };
 		E461C404246B88FD00032911 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C403246B88FD00032911 /* AppDelegate.swift */; };
 		E461C408246B88FD00032911 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C407246B88FD00032911 /* ViewController.swift */; };
 		E461C40B246B88FD00032911 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E461C409246B88FD00032911 /* Main.storyboard */; };
@@ -25,14 +26,16 @@
 		E461C454246B8A7A00032911 /* DefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C44F246B8A7A00032911 /* DefaultView.swift */; };
 		E461C455246B8A7A00032911 /* CommonCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C450246B8A7A00032911 /* CommonCollectionView.swift */; };
 		E461C456246B8A7A00032911 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C451246B8A7A00032911 /* HomeView.swift */; };
-		E461C457246B8A7A00032911 /* SnapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C452246B8A7A00032911 /* SnapView.swift */; };
+		E461C457246B8A7A00032911 /* ComplexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C452246B8A7A00032911 /* ComplexView.swift */; };
 		E461C458246B8A7A00032911 /* WaterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C453246B8A7A00032911 /* WaterCollectionView.swift */; };
 		E461C45E246B8A8700032911 /* WaterCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C459246B8A8700032911 /* WaterCollectionVC.swift */; };
-		E461C45F246B8A8700032911 /* SnapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C45A246B8A8700032911 /* SnapVC.swift */; };
+		E461C45F246B8A8700032911 /* ComplexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C45A246B8A8700032911 /* ComplexVC.swift */; };
 		E461C460246B8A8700032911 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C45B246B8A8700032911 /* HomeVC.swift */; };
 		E461C461246B8A8700032911 /* DefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C45C246B8A8700032911 /* DefaultVC.swift */; };
 		E461C462246B8A8700032911 /* CommonCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C45D246B8A8700032911 /* CommonCollectionVC.swift */; };
 		E461C464246B8AD500032911 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C463246B8AD400032911 /* Constant.swift */; };
+		E4C522D4246E78350056333B /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C522D3246E78350056333B /* GroupVC.swift */; };
+		E4C522D6246E78470056333B /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C522D5246E78470056333B /* GroupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,7 @@
 		59F9D2E7BC9FB0A982ACCE84 /* Pods-SwiftRebuildOC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRebuildOC.debug.xcconfig"; path = "Target Support Files/Pods-SwiftRebuildOC/Pods-SwiftRebuildOC.debug.xcconfig"; sourceTree = "<group>"; };
 		96C925D079A325D32976A104 /* Pods-SwiftRebuildOC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRebuildOC.release.xcconfig"; path = "Target Support Files/Pods-SwiftRebuildOC/Pods-SwiftRebuildOC.release.xcconfig"; sourceTree = "<group>"; };
 		B1D4A1A2F5EFCE6BFED116DF /* Pods_SwiftRebuildOC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRebuildOC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E456A61A246F91AF008203AB /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		E461C400246B88FD00032911 /* SwiftRebuildOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRebuildOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E461C403246B88FD00032911 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E461C407246B88FD00032911 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,14 +83,16 @@
 		E461C44F246B8A7A00032911 /* DefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultView.swift; sourceTree = "<group>"; };
 		E461C450246B8A7A00032911 /* CommonCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonCollectionView.swift; sourceTree = "<group>"; };
 		E461C451246B8A7A00032911 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		E461C452246B8A7A00032911 /* SnapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapView.swift; sourceTree = "<group>"; };
+		E461C452246B8A7A00032911 /* ComplexView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexView.swift; sourceTree = "<group>"; };
 		E461C453246B8A7A00032911 /* WaterCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterCollectionView.swift; sourceTree = "<group>"; };
 		E461C459246B8A8700032911 /* WaterCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterCollectionVC.swift; sourceTree = "<group>"; };
-		E461C45A246B8A8700032911 /* SnapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapVC.swift; sourceTree = "<group>"; };
+		E461C45A246B8A8700032911 /* ComplexVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexVC.swift; sourceTree = "<group>"; };
 		E461C45B246B8A8700032911 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E461C45C246B8A8700032911 /* DefaultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultVC.swift; sourceTree = "<group>"; };
 		E461C45D246B8A8700032911 /* CommonCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonCollectionVC.swift; sourceTree = "<group>"; };
 		E461C463246B8AD400032911 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		E4C522D3246E78350056333B /* GroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
+		E4C522D5246E78470056333B /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,8 +194,9 @@
 				E461C45D246B8A8700032911 /* CommonCollectionVC.swift */,
 				E461C45C246B8A8700032911 /* DefaultVC.swift */,
 				E461C45B246B8A8700032911 /* HomeVC.swift */,
-				E461C45A246B8A8700032911 /* SnapVC.swift */,
 				E461C459246B8A8700032911 /* WaterCollectionVC.swift */,
+				E461C45A246B8A8700032911 /* ComplexVC.swift */,
+				E4C522D3246E78350056333B /* GroupVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -200,8 +207,9 @@
 				E461C450246B8A7A00032911 /* CommonCollectionView.swift */,
 				E461C44F246B8A7A00032911 /* DefaultView.swift */,
 				E461C451246B8A7A00032911 /* HomeView.swift */,
-				E461C452246B8A7A00032911 /* SnapView.swift */,
 				E461C453246B8A7A00032911 /* WaterCollectionView.swift */,
+				E461C452246B8A7A00032911 /* ComplexView.swift */,
+				E4C522D5246E78470056333B /* GroupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,6 +236,7 @@
 			children = (
 				E461C444246B8A4200032911 /* AdaptiveTableViewCell.swift */,
 				E461C445246B8A4200032911 /* HomeTableViewCell.swift */,
+				E456A61A246F91AF008203AB /* GroupTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -429,22 +438,25 @@
 				E461C461246B8A8700032911 /* DefaultVC.swift in Sources */,
 				E461C447246B8A4200032911 /* HomeTableViewCell.swift in Sources */,
 				E461C408246B88FD00032911 /* ViewController.swift in Sources */,
-				E461C45F246B8A8700032911 /* SnapVC.swift in Sources */,
+				E461C45F246B8A8700032911 /* ComplexVC.swift in Sources */,
 				E461C44E246B8A6B00032911 /* LowCollectionViewCell.swift in Sources */,
 				E461C442246B8A2700032911 /* WFlowLayout.swift in Sources */,
 				E461C460246B8A8700032911 /* HomeVC.swift in Sources */,
 				E461C464246B8AD500032911 /* Constant.swift in Sources */,
 				E461C458246B8A7A00032911 /* WaterCollectionView.swift in Sources */,
 				E461C454246B8A7A00032911 /* DefaultView.swift in Sources */,
+				E456A61B246F91AF008203AB /* GroupTableViewCell.swift in Sources */,
 				E461C44C246B8A6B00032911 /* CommonCollectionViewCell.swift in Sources */,
 				E461C434246B89B700032911 /* BaseVC.swift in Sources */,
+				E4C522D4246E78350056333B /* GroupVC.swift in Sources */,
 				E461C455246B8A7A00032911 /* CommonCollectionView.swift in Sources */,
-				E461C457246B8A7A00032911 /* SnapView.swift in Sources */,
+				E461C457246B8A7A00032911 /* ComplexView.swift in Sources */,
 				E461C45E246B8A8700032911 /* WaterCollectionVC.swift in Sources */,
 				E461C446246B8A4200032911 /* AdaptiveTableViewCell.swift in Sources */,
 				E461C456246B8A7A00032911 /* HomeView.swift in Sources */,
 				E461C44D246B8A6B00032911 /* HighCollectionViewCell.swift in Sources */,
 				E461C404246B88FD00032911 /* AppDelegate.swift in Sources */,
+				E4C522D6246E78470056333B /* GroupView.swift in Sources */,
 				E461C462246B8A8700032911 /* CommonCollectionVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

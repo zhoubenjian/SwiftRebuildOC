@@ -1,18 +1,17 @@
 //
-//  HomeTableViewCell.swift
-//  SwiftRebuildOCDemo
+//  GroupTableViewCell.swift
+//  SwiftRebuildOC
 //
-//  Created by 周本健 on 2020/5/7.
+//  Created by 周本健 on 2020/5/16.
 //  Copyright © 2020 com.Personal.Benjamin. All rights reserved.
 //
 
 import UIKit
 import SnapKit
 
-class HomeTableViewCell: UITableViewCell {
+class GroupTableViewCell: UITableViewCell {
     
-    var titleLabel: UILabel! = UILabel()
-    
+    var titlelabel: UILabel! = UILabel()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +23,7 @@ class HomeTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -34,13 +33,15 @@ class HomeTableViewCell: UITableViewCell {
     
     func createCellUI() {
         
-        self.addSubview(self.titleLabel)
-        self.titleLabel.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
+        self.addSubview(self.titlelabel)
+        self.titlelabel.snp.makeConstraints { (make) in
+            make.left.equalTo(self.snp_left)
+            make.centerY.equalToSuperview()
         }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }

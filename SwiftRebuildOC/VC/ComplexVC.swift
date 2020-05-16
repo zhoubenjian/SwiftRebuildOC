@@ -8,15 +8,15 @@
 
 import UIKit
 
-class SnapVC: BaseVC {
+class ComplexVC: BaseVC {
     
-    var mainView: SnapView!
+    var mainView: ComplexView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "SnapVC"
+        self.navigationItem.title = "complexVC"
         
         self.view.backgroundColor = .white
         self.createUI()
@@ -24,7 +24,7 @@ class SnapVC: BaseVC {
     
     func createUI() {
         
-        self.mainView = SnapView();
+        self.mainView = ComplexView();
         self.view.addSubview(self.mainView)
         self.mainView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
