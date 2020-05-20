@@ -13,7 +13,7 @@ class GroupVC: BaseVC {
     
     var mainView: GroupView!
     
-    var titleDic: Dictionary<Int, String>!
+    var titleArray: [String]!
     var dataDic: Dictionary<Int, [String]>!
 
     
@@ -23,11 +23,7 @@ class GroupVC: BaseVC {
         self.navigationItem.title = "GroupVC"
         
         self.view.backgroundColor = .white
-        self.titleDic = [
-            0: "一线城市",
-            1: "新一线城市",
-            2: "二线城市"
-        ];
+        self.titleArray = [ "一线城市", "新一线城市", "二线城市"];
         self.dataDic = [
             0: [
                 "北京市", "上海市", "广州市", "深圳市",
@@ -55,7 +51,7 @@ class GroupVC: BaseVC {
     func createUI() {
         
         self.mainView = GroupView()
-        self.mainView.loadData(titleDic: self.titleDic, dataDic: self.dataDic)
+        self.mainView.loadData(titleArray: self.titleArray, dataDic: self.dataDic)
         self.view.addSubview(self.mainView)
         self.mainView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
