@@ -34,6 +34,9 @@
 		E461C461246B8A8700032911 /* DefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C45C246B8A8700032911 /* DefaultVC.swift */; };
 		E461C462246B8A8700032911 /* CommonCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C45D246B8A8700032911 /* CommonCollectionVC.swift */; };
 		E461C464246B8AD500032911 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C463246B8AD400032911 /* Constant.swift */; };
+		E481FCE424751571001F5F60 /* SectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481FCE324751571001F5F60 /* SectionVC.swift */; };
+		E481FCE6247515A4001F5F60 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481FCE5247515A4001F5F60 /* SectionView.swift */; };
+		E481FCE924752596001F5F60 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481FCE824752596001F5F60 /* SectionHeaderView.swift */; };
 		E4C522D4246E78350056333B /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C522D3246E78350056333B /* GroupVC.swift */; };
 		E4C522D6246E78470056333B /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C522D5246E78470056333B /* GroupView.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +94,9 @@
 		E461C45C246B8A8700032911 /* DefaultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultVC.swift; sourceTree = "<group>"; };
 		E461C45D246B8A8700032911 /* CommonCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonCollectionVC.swift; sourceTree = "<group>"; };
 		E461C463246B8AD400032911 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		E481FCE324751571001F5F60 /* SectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionVC.swift; sourceTree = "<group>"; };
+		E481FCE5247515A4001F5F60 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		E481FCE824752596001F5F60 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		E4C522D3246E78350056333B /* GroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
 		E4C522D5246E78470056333B /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +166,7 @@
 				E461C43D246B89EE00032911 /* VC */,
 				E461C43E246B89FA00032911 /* View */,
 				E461C43F246B8A0700032911 /* Cell */,
+				E481FCE72475254B001F5F60 /* Header */,
 				E461C440246B8A1200032911 /* Layout */,
 				E461C463246B8AD400032911 /* Constant.swift */,
 				E461C409246B88FD00032911 /* Main.storyboard */,
@@ -197,6 +204,7 @@
 				E461C459246B8A8700032911 /* WaterCollectionVC.swift */,
 				E461C45A246B8A8700032911 /* ComplexVC.swift */,
 				E4C522D3246E78350056333B /* GroupVC.swift */,
+				E481FCE324751571001F5F60 /* SectionVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -210,6 +218,7 @@
 				E461C453246B8A7A00032911 /* WaterCollectionView.swift */,
 				E461C452246B8A7A00032911 /* ComplexView.swift */,
 				E4C522D5246E78470056333B /* GroupView.swift */,
+				E481FCE5247515A4001F5F60 /* SectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -249,6 +258,14 @@
 				E461C44B246B8A6A00032911 /* LowCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		E481FCE72475254B001F5F60 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				E481FCE824752596001F5F60 /* SectionHeaderView.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		FC61B628DE41CBAACEFE06EE /* Pods */ = {
@@ -443,11 +460,14 @@
 				E461C442246B8A2700032911 /* WFlowLayout.swift in Sources */,
 				E461C460246B8A8700032911 /* HomeVC.swift in Sources */,
 				E461C464246B8AD500032911 /* Constant.swift in Sources */,
+				E481FCE424751571001F5F60 /* SectionVC.swift in Sources */,
 				E461C458246B8A7A00032911 /* WaterCollectionView.swift in Sources */,
 				E461C454246B8A7A00032911 /* DefaultView.swift in Sources */,
 				E456A61B246F91AF008203AB /* GroupTableViewCell.swift in Sources */,
+				E481FCE6247515A4001F5F60 /* SectionView.swift in Sources */,
 				E461C44C246B8A6B00032911 /* CommonCollectionViewCell.swift in Sources */,
 				E461C434246B89B700032911 /* BaseVC.swift in Sources */,
+				E481FCE924752596001F5F60 /* SectionHeaderView.swift in Sources */,
 				E4C522D4246E78350056333B /* GroupVC.swift in Sources */,
 				E461C455246B8A7A00032911 /* CommonCollectionView.swift in Sources */,
 				E461C457246B8A7A00032911 /* ComplexView.swift in Sources */,

@@ -46,6 +46,7 @@ class GroupView: UIView {
     func loadData(titleArray: [String], dataDic: Dictionary<Int, [String]>) {
         self.titleArray = titleArray
         self.dataDic = dataDic
+        // 刷新
         self.groupTB.reloadData()
     }
     

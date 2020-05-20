@@ -21,8 +21,8 @@ class GroupVC: BaseVC {
         super.viewDidLoad()
 
         self.navigationItem.title = "GroupVC"
-        
         self.view.backgroundColor = .white
+        
         self.titleArray = [ "一线城市", "新一线城市", "二线城市"];
         self.dataDic = [
             0: [
