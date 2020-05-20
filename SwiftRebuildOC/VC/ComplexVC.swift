@@ -25,6 +25,11 @@ class ComplexVC: BaseVC {
     func createUI() {
         
         self.mainView = ComplexView();
+//        if #available(iOS 11.0, *) {
+//            self.mainView.sv.contentInsetAdjustmentBehavior = .never
+//        } else {
+//            self.automaticallyAdjustsScrollViewInsets = false
+//        }
         self.view.addSubview(self.mainView)
         self.mainView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()

@@ -21,6 +21,7 @@ class SectionView: UIView {
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
         layout.headerReferenceSize = CGSize.init(width: SCREENWIDTH, height: 50)
+        layout.sectionHeadersPinToVisibleBounds = true          // 分组头视图悬浮吸顶
         return layout
     }()
     
@@ -115,7 +116,7 @@ extension SectionView: UICollectionViewDelegate, UICollectionViewDataSource {
         
         cell.backImgView.backgroundColor = .clear
         cell.layer.masksToBounds = true
-        cell.layer.cornerRadius = 5
+        cell.layer.cornerRadius = 10
         
         if "purple" == self.titleArray[indexPath.section] {
             cell.backImgView.backgroundColor = .purple

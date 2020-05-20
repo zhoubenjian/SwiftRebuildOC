@@ -24,7 +24,8 @@ class ComplexView: UIView {
     lazy var hLayout: UICollectionViewFlowLayout = {() -> UICollectionViewFlowLayout in
         let hLayout = UICollectionViewFlowLayout()
         hLayout.scrollDirection = .horizontal
-        hLayout.itemSize = CGSize(width: (SCREENWIDTH - 40) / 3, height: (SCREENWIDTH - 40) / 3)
+        let SIDEWIDTH: Int = (Int)(SCREENWIDTH - 40) / 3    // 横向滑动CollectionView的item边长
+        hLayout.itemSize = CGSize(width: SIDEWIDTH, height: SIDEWIDTH)
         hLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         hLayout.minimumLineSpacing = 10         // 与滑动方向一致的item间距
         return hLayout
@@ -52,7 +53,6 @@ class ComplexView: UIView {
         
         self.sv = UIScrollView.init(frame: .zero)
         self.sv.backgroundColor = .white
-//        self.sv.showsVerticalScrollIndicator = false        // 隐藏滑动条
         self.addSubview(self.sv)
         
         self.contentView = UIView.init(frame: .zero)
