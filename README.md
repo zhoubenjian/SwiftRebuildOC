@@ -6,3 +6,4 @@ TableViewCell自适应高度；
 ScrollView嵌套TableView，CollectionView；
 TableView分组标题悬浮吸顶；
 CollectionView分组标题悬浮吸顶；
+CollectionView画廊效果；
