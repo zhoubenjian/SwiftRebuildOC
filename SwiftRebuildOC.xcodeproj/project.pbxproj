@@ -38,6 +38,9 @@
 		E461C461246B8A8700032911 /* DefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C45C246B8A8700032911 /* DefaultVC.swift */; };
 		E461C462246B8A8700032911 /* CommonCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C45D246B8A8700032911 /* CommonCollectionVC.swift */; };
 		E461C464246B8AD500032911 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E461C463246B8AD400032911 /* Constant.swift */; };
+		E463259E247CBAC900020EAB /* SimpleCalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E463259D247CBAC900020EAB /* SimpleCalculatorVC.swift */; };
+		E46325A0247CBAE700020EAB /* SimpleCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E463259F247CBAE700020EAB /* SimpleCalculatorView.swift */; };
+		E46325A2247CC1B800020EAB /* SimpleCalculatorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46325A1247CC1B800020EAB /* SimpleCalculatorCollectionViewCell.swift */; };
 		E481FCE424751571001F5F60 /* SectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481FCE324751571001F5F60 /* SectionVC.swift */; };
 		E481FCE6247515A4001F5F60 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481FCE5247515A4001F5F60 /* SectionView.swift */; };
 		E481FCE924752596001F5F60 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481FCE824752596001F5F60 /* SectionHeaderView.swift */; };
@@ -102,6 +105,9 @@
 		E461C45C246B8A8700032911 /* DefaultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultVC.swift; sourceTree = "<group>"; };
 		E461C45D246B8A8700032911 /* CommonCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonCollectionVC.swift; sourceTree = "<group>"; };
 		E461C463246B8AD400032911 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		E463259D247CBAC900020EAB /* SimpleCalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculatorVC.swift; sourceTree = "<group>"; };
+		E463259F247CBAE700020EAB /* SimpleCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculatorView.swift; sourceTree = "<group>"; };
+		E46325A1247CC1B800020EAB /* SimpleCalculatorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculatorCollectionViewCell.swift; sourceTree = "<group>"; };
 		E481FCE324751571001F5F60 /* SectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionVC.swift; sourceTree = "<group>"; };
 		E481FCE5247515A4001F5F60 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		E481FCE824752596001F5F60 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
@@ -214,6 +220,7 @@
 				E4C522D3246E78350056333B /* GroupVC.swift */,
 				E481FCE324751571001F5F60 /* SectionVC.swift */,
 				E45397E4247B67A00094925C /* GalleryVC.swift */,
+				E463259D247CBAC900020EAB /* SimpleCalculatorVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -229,6 +236,7 @@
 				E4C522D5246E78470056333B /* GroupView.swift */,
 				E481FCE5247515A4001F5F60 /* SectionView.swift */,
 				E45397E6247B67B20094925C /* GalleryView.swift */,
+				E463259F247CBAE700020EAB /* SimpleCalculatorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,6 +276,7 @@
 				E461C44A246B8A6A00032911 /* HighCollectionViewCell.swift */,
 				E461C44B246B8A6A00032911 /* LowCollectionViewCell.swift */,
 				E45397E8247B6DE70094925C /* GalleryCollectionViewCell.swift */,
+				E46325A1247CC1B800020EAB /* SimpleCalculatorCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -468,6 +477,8 @@
 				E45397E9247B6DE70094925C /* GalleryCollectionViewCell.swift in Sources */,
 				E461C447246B8A4200032911 /* HomeTableViewCell.swift in Sources */,
 				E461C408246B88FD00032911 /* ViewController.swift in Sources */,
+				E46325A0247CBAE700020EAB /* SimpleCalculatorView.swift in Sources */,
+				E463259E247CBAC900020EAB /* SimpleCalculatorVC.swift in Sources */,
 				E461C45F246B8A8700032911 /* ComplexVC.swift in Sources */,
 				E461C44E246B8A6B00032911 /* LowCollectionViewCell.swift in Sources */,
 				E461C442246B8A2700032911 /* WFlowLayout.swift in Sources */,
@@ -479,6 +490,7 @@
 				E456A61B246F91AF008203AB /* GroupTableViewCell.swift in Sources */,
 				E481FCE6247515A4001F5F60 /* SectionView.swift in Sources */,
 				E461C44C246B8A6B00032911 /* CommonCollectionViewCell.swift in Sources */,
+				E46325A2247CC1B800020EAB /* SimpleCalculatorCollectionViewCell.swift in Sources */,
 				E461C434246B89B700032911 /* BaseVC.swift in Sources */,
 				E481FCE924752596001F5F60 /* SectionHeaderView.swift in Sources */,
 				E4C522D4246E78350056333B /* GroupVC.swift in Sources */,

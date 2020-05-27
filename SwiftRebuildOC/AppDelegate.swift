@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.nav = UINavigationController()
-        self.nav?.viewControllers = [HomeVC()]
+        self.nav?.viewControllers = [HomeVC()]      
         
         self.nav?.navigationBar.isTranslucent = false
         self.nav?.navigationBar.shadowImage = UIImage()

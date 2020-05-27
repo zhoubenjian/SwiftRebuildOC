@@ -12,8 +12,6 @@ import SnapKit
 class GalleryView: UIView {
     
     var GalleryCollectionView: UICollectionView!
-    var colorArray: Array<UIColor>! = Array()
-    var isFirst: Bool! = true
     
     // 懒加载
     lazy var layout: GalleryLayout = {() -> GalleryLayout in

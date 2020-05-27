@@ -25,6 +25,8 @@ class HomeView: UIView {
     var skipToSVClosures: SkipToSVClosures!
     typealias SkipToGalleryVClosures = () -> Void
     var skipToGalleryVClosures: SkipToGalleryVClosures!
+    typealias SkipToSCVClosures = () -> Void
+    var skipToSCVClosures: SkipToSCVClosures!
     
     
     override init(frame: CGRect) {
@@ -107,9 +109,13 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
             
             self.skipToSVClosures()
             
-        } else {
+        } else if indexPath.row == 10 {
             
             self.skipToGalleryVClosures()
+            
+        } else {
+            
+            self.skipToSCVClosures()
             
         }
         
