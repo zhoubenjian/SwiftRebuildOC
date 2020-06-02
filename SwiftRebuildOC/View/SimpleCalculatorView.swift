@@ -106,16 +106,24 @@ class SimpleCalculatorView: UIView {
     }
     
     // 计算
-    func calculateResult(inputStr: String, c: Character) -> String {
-        let strArray: [Substring] = inputStr.split(separator: c)
+    func calculateResult(inputStr: String) -> String {
+        
+        var strArray: [Substring]!
         var result: Float! = 0
-        print(strArray)
-        if "+" == c {
-            // 加法
+        
+        if inputStr.contains("+") {
+            
+            // 根据运算符分割字符串
+            strArray = inputStr.split(separator: "+")
+            // 加法（最为特殊，可以直接累加）
             for sub in strArray {
                 result += (sub as NSString).floatValue
             }
-        } else if "-" == c {
+            
+        } else if inputStr.contains("-") {
+            
+            // 根据运算符分割字符串
+            strArray = inputStr.split(separator: "-")
             // 减法
             for i in 0..<strArray.count {
                 if i == 0 {
@@ -124,7 +132,11 @@ class SimpleCalculatorView: UIView {
                     result -= (strArray[i] as NSString).floatValue
                 }
             }
-        } else if "*" == c {
+            
+        } else if inputStr.contains("*") {
+            
+            // 根据运算符分割字符串
+            strArray = inputStr.split(separator: "*")
             // 乘法
             for i in 0..<strArray.count {
                 if i == 0 {
@@ -133,7 +145,11 @@ class SimpleCalculatorView: UIView {
                     result *= (strArray[i] as NSString).floatValue
                 }
             }
-        } else if "/" == c {
+            
+        } else if inputStr.contains("/") {
+            
+            // 根据运算符分割字符串
+            strArray = inputStr.split(separator: "/")
             // 除法
             for i in 0..<strArray.count {
                 if i == 0 {
@@ -142,8 +158,8 @@ class SimpleCalculatorView: UIView {
                     result /= (strArray[i] as NSString).floatValue
                 }
             }
+            
         }
-        
         
         return result.cleanZero
     }
@@ -155,19 +171,11 @@ class SimpleCalculatorView: UIView {
     
     
     @objc func result() {
-        if self.inputStr.contains("+") {
-            // 加法（+）
-            self.resultTxt.text = calculateResult(inputStr: self.inputStr, c: "+")
-        } else if self.inputStr.contains("-") {
-            // 减法（-）
-            self.resultTxt.text = calculateResult(inputStr: self.inputStr, c: "-")
-        } else if self.inputStr.contains("*") {
-            // 乘法（*）
-            self.resultTxt.text = calculateResult(inputStr: self.inputStr, c: "*")
-        } else if self.inputStr.contains("/") {
-            // 除法（/）
-            self.resultTxt.text = calculateResult(inputStr: self.inputStr, c: "/")
-        }
+        // 运算
+        self.resultTxt.text = calculateResult(inputStr: self.inputStr)
+        // 更新输入内容
+        self.inputStr = self.resultTxt.text
+        print(self.inputStr ?? "")
     }
     
     // 清空输入内容
