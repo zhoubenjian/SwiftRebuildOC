@@ -115,7 +115,7 @@ class SimpleCalculatorView: UIView {
             
             // 根据运算符分割字符串
             strArray = inputStr.split(separator: "+")
-            // 加法（最为特殊，可以直接累加）
+            // 加法（可以直接累加）
             for sub in strArray {
                 result += (sub as NSString).floatValue
             }
@@ -171,11 +171,13 @@ class SimpleCalculatorView: UIView {
     
     
     @objc func result() {
+        
         // 运算
         self.resultTxt.text = calculateResult(inputStr: self.inputStr)
+        
         // 更新输入内容
         self.inputStr = self.resultTxt.text
-        print(self.inputStr ?? "")
+        
     }
     
     // 清空输入内容
