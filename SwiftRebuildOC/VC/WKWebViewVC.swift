@@ -19,10 +19,10 @@ class WKWebViewVC: BaseVC {
         self.navigationItem.title = "WKWebView"
         self.view.backgroundColor = .white
         
-        self.createVC()
+        self.createUI()
     }
     
-    func createVC() {
+    func createUI() {
         
         self.wkWebView = WKWebView.init()
         self.wkWebView.load(URLRequest(url: URL(string: "https://www.baidu.com")!))
@@ -38,6 +38,7 @@ class WKWebViewVC: BaseVC {
 
 }
 
+// MARK: - WKNavigationDelegate
 extension WKWebViewVC : WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {

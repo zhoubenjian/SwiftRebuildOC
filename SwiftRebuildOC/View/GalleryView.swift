@@ -58,6 +58,7 @@ class GalleryView: UIView {
     
 }
 
+// MARK: - UICollectionView delegate & dataSource
 extension GalleryView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

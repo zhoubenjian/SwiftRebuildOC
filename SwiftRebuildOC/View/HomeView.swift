@@ -29,7 +29,8 @@ class HomeView: UIView {
     var skipToSCVClosures: SkipToSCVClosures!
     typealias SkipToWVVCClosures = () -> Void
     var skipToWVVCClosures: SkipToWVVCClosures!
-    
+    typealias SkipToChartsVCClosures = () -> Void
+    var skipToChartsVCClosures: SkipToChartsVCClosures!
     
     
     override init(frame: CGRect) {
@@ -120,9 +121,13 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
             
             self.skipToSCVClosures()
             
-        } else {
+        } else if indexPath.row == 12{
             
             self.skipToWVVCClosures()
+            
+        } else {
+            
+            self.skipToChartsVCClosures()
             
         }
         
