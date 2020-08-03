@@ -15,6 +15,8 @@ class ChartsView: UIView {
     
     typealias RadarChartsClosures = () -> ()
     var radarChartsClosures: RadarChartsClosures!
+    typealias LineChartsClosure = () -> ()
+    var lineChartsClosure: LineChartsClosure!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -80,6 +82,10 @@ extension ChartsView : UITableViewDelegate, UITableViewDataSource {
             // RadarCharts
             self.radarChartsClosures()
             
+        } else if indexPath.row == 1 {
+            
+            // lineCharts
+            self.lineChartsClosure()
         }
     }
     

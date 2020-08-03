@@ -47,5 +47,12 @@ class ChartsVC: BaseVC {
             self.navigationController?.pushViewController(rcVC, animated: true)
             
         };
+        
+        self.mainView.lineChartsClosure = {
+          
+            let lcVC: LineChartsVC = LineChartsVC()
+            self.navigationController?.pushViewController(lcVC, animated: true)
+            
+        };
     }
 }

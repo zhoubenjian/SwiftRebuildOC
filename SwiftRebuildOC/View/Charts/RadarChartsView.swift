@@ -49,6 +49,7 @@ class RadarChartsView: UIView {
         
         // 自定义样式
         for i in 0..<self.radarChartsDataArray.count {
+            
             if i == 0 {
                 
                 self.radarChartsDataArray[i].setColor(.green)

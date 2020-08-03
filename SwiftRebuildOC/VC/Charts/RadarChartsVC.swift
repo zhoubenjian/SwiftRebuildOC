@@ -36,10 +36,10 @@ class RadarChartsVC: BaseVC {
     )
     let purpleDataSet = RadarChartDataSet(
         entries: [
-            RadarChartDataEntry(value: 190.0),
+            RadarChartDataEntry(value: 210.0),
             RadarChartDataEntry(value: 200.0),
             RadarChartDataEntry(value: 210.0),
-            RadarChartDataEntry(value: 180.0),
+            RadarChartDataEntry(value: 230.0),
             RadarChartDataEntry(value: 220.0)
         ],
         label: "诸葛亮"
