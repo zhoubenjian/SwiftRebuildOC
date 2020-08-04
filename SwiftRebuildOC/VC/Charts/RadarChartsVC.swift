@@ -46,7 +46,6 @@ class RadarChartsVC: BaseVC {
     )
     
     var radarChartsDataArray: [RadarChartDataSet]!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

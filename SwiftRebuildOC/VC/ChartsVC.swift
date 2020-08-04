@@ -13,7 +13,7 @@ class ChartsVC: BaseVC {
     
     var mainView: ChartsView!
     
-    var chartsArray = ["RadarCharts", "折线图", "饼图"]
+    var chartsArray = ["RadarCharts(雷达图)", "LineCharts(折线图)", "PieCharts(饼图)"]
     
     
     override func viewDidLoad() {
@@ -52,6 +52,13 @@ class ChartsVC: BaseVC {
           
             let lcVC: LineChartsVC = LineChartsVC()
             self.navigationController?.pushViewController(lcVC, animated: true)
+            
+        };
+        
+        self.mainView.pieChartsClosure = {
+            
+            let pcVC: PieChartsVC = PieChartsVC()
+            self.navigationController?.pushViewController(pcVC, animated: true)
             
         };
     }
