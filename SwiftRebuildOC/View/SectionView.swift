@@ -69,8 +69,10 @@ class SectionView: UIView {
     
 }
 
+// MARK: - UICollectionView  delegate & dataSource
 extension SectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    // MARK: - 分组数
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.titleArray.count
     }
@@ -106,11 +108,13 @@ extension SectionView: UICollectionViewDelegate, UICollectionViewDataSource {
         return header
     }
     
+    // MARK: - 每组单位数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let count: Int = self.dataDic[section]!
         return count
     }
     
+    // MARK: - 单位内容
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CommonCollectionViewCell! = collectionView.dequeueReusableCell(withReuseIdentifier: "common", for: indexPath) as? CommonCollectionViewCell
         
@@ -130,6 +134,11 @@ extension SectionView: UICollectionViewDelegate, UICollectionViewDataSource {
             cell.backImgView.backgroundColor = .red
         }
         return cell;
+    }
+    
+    // MARK: - 点击效果
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("第\(indexPath.section + 1)组, 第\(indexPath.row + 1)项");
     }
     
 }

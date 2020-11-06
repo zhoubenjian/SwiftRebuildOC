@@ -12,3 +12,4 @@ CollectionView画廊效果；
 添加雷达图表（RadarCharts）参考链接:https://github.com/danielgindi/Charts
 添加折线图表
 添加饼图
+分组视图添加点击打印

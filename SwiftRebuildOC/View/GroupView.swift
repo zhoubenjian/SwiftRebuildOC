@@ -73,11 +73,13 @@ extension GroupView: UITableViewDelegate, UITableViewDataSource {
         return ""
     }
     
+    // MARK: - 每组行数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let data: [String] = self.dataDic[section]!
         return data.count
     }
     
+    // MARK: - 每行内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = "group"
         var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: identifier)
@@ -88,6 +90,12 @@ extension GroupView: UITableViewDelegate, UITableViewDataSource {
         let data: [String] = self.dataDic[indexPath.section]!
         cell.textLabel?.text = data[indexPath.row]
         return cell
+    }
+    
+    // MARK: - 点击效果
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data: [String] = self.dataDic[indexPath.section]!
+        print("第\(indexPath.section + 1)组, 第\(indexPath.row + 1)行————\(self.titleArray[indexPath.section]): \(data[indexPath.row])");
     }
 
 }

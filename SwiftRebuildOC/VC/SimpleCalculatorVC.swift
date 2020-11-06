@@ -20,7 +20,7 @@ class SimpleCalculatorVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "简易计算器"
+        self.navigationItem.title = "SimpleCalcutor"
         self.view.backgroundColor = .white
         self.operateArray = ["+", "-", "*", "/", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         self.createUI()
