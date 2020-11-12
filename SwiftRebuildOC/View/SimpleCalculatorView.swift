@@ -79,19 +79,19 @@ class SimpleCalculatorView: UIView {
         self.resultBtn.snp.makeConstraints { (make) in
             make.width.equalTo((SCREENWIDTH - 150) / 2)
             make.height.equalTo((SCREENWIDTH - 150) / 2 * 0.618)
-            make.left.equalTo(self.snp_left).offset(50)
-            make.top.equalTo(self.resultTxt.snp_bottom).offset(10)
+            make.left.equalTo(self.snp.left).offset(50)
+            make.top.equalTo(self.resultTxt.snp.bottom).offset(10)
         }
         
         self.cleanBtn.snp.makeConstraints { (make) in
             make.width.equalTo(self.resultBtn)
             make.height.equalTo(self.resultBtn)
-            make.right.equalTo(self.snp_right).offset(-50)
+            make.right.equalTo(self.snp.right).offset(-50)
             make.top.equalTo(self.resultBtn)
         }
         
         self.SCCollectionView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.resultBtn.snp_bottom).offset(10)
+            make.top.equalTo(self.resultBtn.snp.bottom).offset(10)
             make.bottom.left.right.equalToSuperview()
         }
     }

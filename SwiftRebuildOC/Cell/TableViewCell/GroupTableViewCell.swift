@@ -35,7 +35,7 @@ class GroupTableViewCell: UITableViewCell {
         
         self.addSubview(self.titlelabel)
         self.titlelabel.snp.makeConstraints { (make) in
-            make.left.equalTo(self.snp_left)
+            make.left.equalTo(self.snp.left)
             make.centerY.equalToSuperview()
         }
     }

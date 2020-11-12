@@ -116,37 +116,37 @@ class ComplexView: UIView {
         }
         
         self.hLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.contentView.snp_top).offset(20)
+            make.top.equalTo(self.contentView).offset(20)
             make.width.height.greaterThanOrEqualTo(0)
             make.centerX.equalToSuperview()
         }
         
         self.hcv.snp.makeConstraints { (make) in
-            make.top.equalTo(self.hLabel.snp_bottom).offset(10)
+            make.top.equalTo(self.hLabel.snp.bottom).offset(10)
             make.left.right.equalToSuperview()
             make.height.equalTo((SCREENWIDTH - 40) / 3 + 20)
         }
         
         self.tLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.hcv.snp_bottom).offset(20)
+            make.top.equalTo(self.hcv.snp.bottom).offset(20)
             make.width.height.greaterThanOrEqualTo(0)
             make.centerX.equalToSuperview()
         }
         
         self.tb.snp.makeConstraints { (make) in
-            make.top.equalTo(self.tLabel.snp_bottom).offset(10)
+            make.top.equalTo(self.tLabel.snp.bottom).offset(10)
             make.left.right.equalToSuperview()
             make.height.greaterThanOrEqualTo(0)
         }
         
         self.vLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.tb.snp_bottom).offset(20)
+            make.top.equalTo(self.tb.snp.bottom).offset(20)
             make.width.height.greaterThanOrEqualTo(0)
             make.centerX.equalToSuperview()
         }
         
         self.vcv.snp.makeConstraints { (make) in
-            make.top.equalTo(self.vLabel.snp_bottom).offset(10)
+            make.top.equalTo(self.vLabel.snp.bottom).offset(10)
             make.height.greaterThanOrEqualTo(0)
             make.bottom.left.right.equalToSuperview()
         }
@@ -162,7 +162,7 @@ class ComplexView: UIView {
         
         // 更新vcv约束
         self.vcv.snp.makeConstraints { (make) in
-            make.top.greaterThanOrEqualTo(self.hcv.snp_bottom).offset(self.tb.contentSize.height + 10)
+            make.top.greaterThanOrEqualTo(self.hcv.snp.bottom).offset(self.tb.contentSize.height + 10)
             make.height.greaterThanOrEqualTo(self.vcv.contentSize.height)
         }
     }

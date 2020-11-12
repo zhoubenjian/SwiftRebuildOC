@@ -73,6 +73,11 @@ extension WaterCollectionView: UICollectionViewDelegate, UICollectionViewDataSou
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("\(indexPath.row)")
+        PKHUDShow(str: "\(indexPath.row)")
+    }
+    
 }
 
 // MARK: - WFlowLayoutDelegate deleagte

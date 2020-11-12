@@ -40,8 +40,8 @@ class CommonCollectionViewCell: UICollectionViewCell {
         self.titleLabel.snp.makeConstraints { (make) in
             make.width.greaterThanOrEqualTo(0)
             make.height.greaterThanOrEqualTo(0)
-            make.left.equalTo(self.backImgView.snp_left).offset(10)
-            make.top.equalTo(self.backImgView.snp_top).offset(10)
+            make.left.equalTo(self.backImgView.snp.left).offset(10)
+            make.top.equalTo(self.backImgView.snp.top).offset(10)
         }
     }
     

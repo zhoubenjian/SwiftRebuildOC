@@ -79,4 +79,9 @@ extension CommonCollectionView: UICollectionViewDelegate, UICollectionViewDataSo
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("\(self.pokerCardArray[indexPath.row])")
+        PKHUDShow(str: self.pokerCardArray[indexPath.row])
+    }
+    
 }
