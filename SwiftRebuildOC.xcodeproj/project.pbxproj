@@ -52,6 +52,8 @@
 		E481FCE924752596001F5F60 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481FCE824752596001F5F60 /* SectionHeaderView.swift */; };
 		E4C522D4246E78350056333B /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C522D3246E78350056333B /* GroupVC.swift */; };
 		E4C522D6246E78470056333B /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C522D5246E78470056333B /* GroupView.swift */; };
+		E4E9A55D255D257500B56991 /* SwipeDeleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E9A55C255D257500B56991 /* SwipeDeleteVC.swift */; };
+		E4E9A562255D259100B56991 /* SwipeDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E9A561255D259100B56991 /* SwipeDeleteView.swift */; };
 		E4F566CE24D3F6670046AF68 /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F566CD24D3F6670046AF68 /* ChartsView.swift */; };
 		E4F566D224D408C90046AF68 /* RadarChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F566D124D408C90046AF68 /* RadarChartsVC.swift */; };
 		E4F566D424D41FB60046AF68 /* RadarChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F566D324D41FB60046AF68 /* RadarChartsView.swift */; };
@@ -128,6 +130,8 @@
 		E481FCE824752596001F5F60 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		E4C522D3246E78350056333B /* GroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
 		E4C522D5246E78470056333B /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
+		E4E9A55C255D257500B56991 /* SwipeDeleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDeleteVC.swift; sourceTree = "<group>"; };
+		E4E9A561255D259100B56991 /* SwipeDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDeleteView.swift; sourceTree = "<group>"; };
 		E4F566CD24D3F6670046AF68 /* ChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
 		E4F566D124D408C90046AF68 /* RadarChartsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChartsVC.swift; sourceTree = "<group>"; };
 		E4F566D324D41FB60046AF68 /* RadarChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChartsView.swift; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 				E461C459246B8A8700032911 /* WaterCollectionVC.swift */,
 				E461C45A246B8A8700032911 /* ComplexVC.swift */,
 				E4C522D3246E78350056333B /* GroupVC.swift */,
+				E4E9A55C255D257500B56991 /* SwipeDeleteVC.swift */,
 				E481FCE324751571001F5F60 /* SectionVC.swift */,
 				E45397E4247B67A00094925C /* GalleryVC.swift */,
 				E463259D247CBAC900020EAB /* SimpleCalculatorVC.swift */,
@@ -255,6 +260,7 @@
 				E461C453246B8A7A00032911 /* WaterCollectionView.swift */,
 				E461C452246B8A7A00032911 /* ComplexView.swift */,
 				E4C522D5246E78470056333B /* GroupView.swift */,
+				E4E9A561255D259100B56991 /* SwipeDeleteView.swift */,
 				E481FCE5247515A4001F5F60 /* SectionView.swift */,
 				E45397E6247B67B20094925C /* GalleryView.swift */,
 				E463259F247CBAE700020EAB /* SimpleCalculatorView.swift */,
@@ -535,6 +541,7 @@
 				E456A61B246F91AF008203AB /* GroupTableViewCell.swift in Sources */,
 				E481FCE6247515A4001F5F60 /* SectionView.swift in Sources */,
 				E4F566D424D41FB60046AF68 /* RadarChartsView.swift in Sources */,
+				E4E9A55D255D257500B56991 /* SwipeDeleteVC.swift in Sources */,
 				E461C44C246B8A6B00032911 /* CommonCollectionViewCell.swift in Sources */,
 				E46325A2247CC1B800020EAB /* SimpleCalculatorCollectionViewCell.swift in Sources */,
 				E432A6C224D00BCE0012239B /* WKWebViewVC.swift in Sources */,
@@ -553,6 +560,7 @@
 				E461C456246B8A7A00032911 /* HomeView.swift in Sources */,
 				E45397E7247B67B20094925C /* GalleryView.swift in Sources */,
 				E461C44D246B8A6B00032911 /* HighCollectionViewCell.swift in Sources */,
+				E4E9A562255D259100B56991 /* SwipeDeleteView.swift in Sources */,
 				E461C404246B88FD00032911 /* AppDelegate.swift in Sources */,
 				E4C522D6246E78470056333B /* GroupView.swift in Sources */,
 				E461C462246B8A8700032911 /* CommonCollectionVC.swift in Sources */,

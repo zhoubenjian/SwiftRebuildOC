@@ -21,7 +21,7 @@ class HomeVC: BaseVC {
         self.navigationItem.title = "首页"
         self.view.backgroundColor = .white
     
-        self.styleArray = ["value1", "value2", "subtitle", "default", "adaptiveTableView", "commonCollectionView", "waterCollectionView", "complexVC", "groupVC", "sectionVC", "galleryVC", "simpleCalculatorVC", "WKWebView", "ChartsVC"]
+        self.styleArray = ["value1", "value2", "subtitle", "default", "adaptiveTableView", "commonCollectionView", "waterCollectionView", "complexVC", "groupVC", "swipeDeleteVC", "sectionVC", "galleryVC", "simpleCalculatorVC", "WKWebView", "ChartsVC"]
         self.createUI()
     }
     
@@ -69,6 +69,13 @@ class HomeVC: BaseVC {
             
             let gVC: GroupVC = GroupVC()
             self.navigationController?.pushViewController(gVC, animated: true)
+            
+        }
+        
+        self.mainView.skipToSDClosures = {
+            
+            let sdVC: SwipeDeleteVC = SwipeDeleteVC()
+            self.navigationController?.pushViewController(sdVC, animated: true)
             
         }
         

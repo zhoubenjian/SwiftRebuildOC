@@ -13,22 +13,34 @@ class HomeView: UIView {
     var homeTableView: UITableView!
     var dataArray: [String]!
     
+    
     typealias SkipToTVClosures = (String) -> ()
     var skipToTVClosures: SkipToTVClosures!
+    
     typealias SkipToCVClosures = (String) -> ()
     var skipToCVClosures: SkipToCVClosures!
+    
     typealias SkipToCXClosures = () -> ()
     var skipToCXClosures: SkipToCXClosures!
+    
     typealias SkipToGVClosures = () -> Void
     var skipToGVClosures: SkipToGVClosures!
+    
+    typealias SkipToSDClosures = () -> ()
+    var skipToSDClosures: SkipToSDClosures!
+    
     typealias SkipToSVClosures = () -> Void
     var skipToSVClosures: SkipToSVClosures!
+    
     typealias SkipToGalleryVClosures = () -> Void
     var skipToGalleryVClosures: SkipToGalleryVClosures!
+    
     typealias SkipToSCVClosures = () -> Void
     var skipToSCVClosures: SkipToSCVClosures!
+    
     typealias SkipToWVVCClosures = () -> Void
     var skipToWVVCClosures: SkipToWVVCClosures!
+    
     typealias SkipToChartsVCClosures = () -> Void
     var skipToChartsVCClosures: SkipToChartsVCClosures!
     
@@ -93,43 +105,84 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
         
         let cell: HomeTableViewCell! = tableView.cellForRow(at: indexPath) as? HomeTableViewCell
         
-        if indexPath.row <= 4 {
-            
+        switch indexPath.row {
+        
+        case 0...4:
             self.skipToTVClosures(cell.titleLabel.text!)
             
-        } else if indexPath.row <= 6 {
-            
+        case 5...6:
             self.skipToCVClosures(cell.titleLabel.text!)
             
-        } else if indexPath.row == 7 {
-            
+        case 7:
             self.skipToCXClosures()
             
-        } else if indexPath.row == 8 {
-            
+        case 8:
             self.skipToGVClosures()
             
-        } else if indexPath.row == 9 {
+        case 9:
+            self.skipToSDClosures()
             
+        case 10:
             self.skipToSVClosures()
             
-        } else if indexPath.row == 10 {
-            
+        case 11:
             self.skipToGalleryVClosures()
             
-        } else if indexPath.row == 11 {
-            
+        case 12:
             self.skipToSCVClosures()
             
-        } else if indexPath.row == 12{
-            
+        case 13:
             self.skipToWVVCClosures()
             
-        } else {
-            
+        case 14:
             self.skipToChartsVCClosures()
             
+        default:
+            break
+            
         }
+        
+//        if indexPath.row <= 4 {
+//
+//            self.skipToTVClosures(cell.titleLabel.text!)
+//
+//        } else if indexPath.row <= 6 {
+//
+//            self.skipToCVClosures(cell.titleLabel.text!)
+//
+//        } else if indexPath.row == 7 {
+//
+//            self.skipToCXClosures()
+//
+//        } else if indexPath.row == 8 {
+//
+//            self.skipToGVClosures()
+//
+//        } else if indexPath.row == 9 {
+//
+//            self.skipToSDClosures()
+//
+//        } else if indexPath.row == 10 {
+//
+//            self.skipToSVClosures()
+//
+//        } else if indexPath.row == 11 {
+//
+//            self.skipToGalleryVClosures()
+//
+//        } else if indexPath.row == 12 {
+//
+//            self.skipToSCVClosures()
+//
+//        } else if indexPath.row == 13 {
+//
+//            self.skipToWVVCClosures()
+//
+//        } else {
+//
+//            self.skipToChartsVCClosures()
+//
+//        }
         
     }
 }
