@@ -2,7 +2,7 @@
 //  CommonCollectionVC.swift
 //  SwiftRebuildOCDemo
 //
-//  Created by 周本健 on 2020/5/8.
+//  Created by Benjamin on 2020/5/8.
 //  Copyright © 2020 com.Personal.Benjamin. All rights reserved.
 //
 
