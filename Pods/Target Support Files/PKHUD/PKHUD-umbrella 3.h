@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "PKHUD 2.h"
 #import "PKHUD.h"
 
 FOUNDATION_EXPORT double PKHUDVersionNumber;

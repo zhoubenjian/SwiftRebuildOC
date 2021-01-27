@@ -45,6 +45,7 @@ class HomeView: UIView {
     var skipToChartsVCClosures: SkipToChartsVCClosures!
     
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -105,7 +106,7 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
         
         let cell: HomeTableViewCell! = tableView.cellForRow(at: indexPath) as? HomeTableViewCell
         
-        switch indexPath.row {
+        switch indexPath.row  {
         
         case 0...4:
             self.skipToTVClosures(cell.titleLabel.text!)
@@ -141,48 +142,6 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
             break
             
         }
-        
-//        if indexPath.row <= 4 {
-//
-//            self.skipToTVClosures(cell.titleLabel.text!)
-//
-//        } else if indexPath.row <= 6 {
-//
-//            self.skipToCVClosures(cell.titleLabel.text!)
-//
-//        } else if indexPath.row == 7 {
-//
-//            self.skipToCXClosures()
-//
-//        } else if indexPath.row == 8 {
-//
-//            self.skipToGVClosures()
-//
-//        } else if indexPath.row == 9 {
-//
-//            self.skipToSDClosures()
-//
-//        } else if indexPath.row == 10 {
-//
-//            self.skipToSVClosures()
-//
-//        } else if indexPath.row == 11 {
-//
-//            self.skipToGalleryVClosures()
-//
-//        } else if indexPath.row == 12 {
-//
-//            self.skipToSCVClosures()
-//
-//        } else if indexPath.row == 13 {
-//
-//            self.skipToWVVCClosures()
-//
-//        } else {
-//
-//            self.skipToChartsVCClosures()
-//
-//        }
         
     }
 }

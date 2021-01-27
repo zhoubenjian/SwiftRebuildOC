@@ -11,8 +11,8 @@ import UIKit
 import PKHUD
 
 // MARK: - 屏幕宽高
-let SCREENWIDTH = UIScreen.main.bounds.width        // 屏幕宽
-let SCREENHEIGHT = UIScreen.main.bounds.height      // 屏幕高
+let SCREENWIDTH = UIScreen.main.bounds.width            // 屏幕宽
+let SCREENHEIGHT = UIScreen.main.bounds.height        // 屏幕高
 
 
 
