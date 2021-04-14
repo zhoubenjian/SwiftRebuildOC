@@ -21,7 +21,7 @@ class HomeVC: BaseVC {
         self.navigationItem.title = "首页"
         self.view.backgroundColor = .white
     
-        self.styleArray = ["value1", "value2", "subtitle", "default", "adaptiveTableView", "commonCollectionView", "waterCollectionView", "complexVC", "groupVC", "swipeDeleteVC", "sectionVC", "galleryVC", "simpleCalculatorVC", "WKWebView", "ChartsVC"]
+        self.styleArray = ["value1", "value2", "subtitle", "default", "adaptiveTableView", "commonCollectionView", "waterCollectionView", "complexVC", "groupVC", "swipeDeleteVC", "sectionVC", "galleryVC", "simpleCalculatorVC", "WKWebView", "ChartsVC", "AntForestVC"]
         self.createUI()
     }
     
@@ -111,6 +111,13 @@ class HomeVC: BaseVC {
             
             let cVC: ChartsVC = ChartsVC()
             self.navigationController?.pushViewController(cVC, animated: true)
+            
+        }
+        
+        self.mainView.skipToAntForestVCClosures = {
+            
+            let aVC: AntForestVC = AntForestVC()
+            self.navigationController?.pushViewController(aVC, animated: true)
             
         }
         

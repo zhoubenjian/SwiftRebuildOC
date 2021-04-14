@@ -12,6 +12,8 @@
 		E408DC9224D811A1001C5551 /* LineChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E408DC9124D811A1001C5551 /* LineChartsView.swift */; };
 		E4094E0224D904A100ADF792 /* PieChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4094E0124D904A100ADF792 /* PieChartsVC.swift */; };
 		E4094E0424D90C7300ADF792 /* PieChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4094E0324D90C7300ADF792 /* PieChartsView.swift */; };
+		E41309192626F2D7005114A3 /* AntForestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41309182626F2D7005114A3 /* AntForestVC.swift */; };
+		E413091E2626F2EC005114A3 /* AntForestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E413091D2626F2EC005114A3 /* AntForestView.swift */; };
 		E41EC3FD24D269F1000915AD /* ChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41EC3FC24D269F1000915AD /* ChartsVC.swift */; };
 		E432A6C224D00BCE0012239B /* WKWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E432A6C124D00BCE0012239B /* WKWebViewVC.swift */; };
 		E45397E3247B65E50094925C /* GalleryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45397E2247B65E50094925C /* GalleryLayout.swift */; };
@@ -84,6 +86,8 @@
 		E408DC9124D811A1001C5551 /* LineChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartsView.swift; sourceTree = "<group>"; };
 		E4094E0124D904A100ADF792 /* PieChartsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartsVC.swift; sourceTree = "<group>"; };
 		E4094E0324D90C7300ADF792 /* PieChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartsView.swift; sourceTree = "<group>"; };
+		E41309182626F2D7005114A3 /* AntForestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntForestVC.swift; sourceTree = "<group>"; };
+		E413091D2626F2EC005114A3 /* AntForestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntForestView.swift; sourceTree = "<group>"; };
 		E41EC3FC24D269F1000915AD /* ChartsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsVC.swift; sourceTree = "<group>"; };
 		E432A6C124D00BCE0012239B /* WKWebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewVC.swift; sourceTree = "<group>"; };
 		E45397E2247B65E50094925C /* GalleryLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryLayout.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 				E432A6C124D00BCE0012239B /* WKWebViewVC.swift */,
 				E41EC3FC24D269F1000915AD /* ChartsVC.swift */,
 				E4F566CF24D408810046AF68 /* Charts */,
+				E41309182626F2D7005114A3 /* AntForestVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				E463259F247CBAE700020EAB /* SimpleCalculatorView.swift */,
 				E4F566CD24D3F6670046AF68 /* ChartsView.swift */,
 				E4F566D024D4089D0046AF68 /* Charts */,
+				E413091D2626F2EC005114A3 /* AntForestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -540,6 +546,7 @@
 				E461C454246B8A7A00032911 /* DefaultView.swift in Sources */,
 				E456A61B246F91AF008203AB /* GroupTableViewCell.swift in Sources */,
 				E481FCE6247515A4001F5F60 /* SectionView.swift in Sources */,
+				E41309192626F2D7005114A3 /* AntForestVC.swift in Sources */,
 				E4F566D424D41FB60046AF68 /* RadarChartsView.swift in Sources */,
 				E4E9A55D255D257500B56991 /* SwipeDeleteVC.swift in Sources */,
 				E461C44C246B8A6B00032911 /* CommonCollectionViewCell.swift in Sources */,
@@ -566,6 +573,7 @@
 				E461C462246B8A8700032911 /* CommonCollectionVC.swift in Sources */,
 				E45397E3247B65E50094925C /* GalleryLayout.swift in Sources */,
 				E408DC9224D811A1001C5551 /* LineChartsView.swift in Sources */,
+				E413091E2626F2EC005114A3 /* AntForestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

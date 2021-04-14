@@ -44,6 +44,9 @@ class HomeView: UIView {
     typealias SkipToChartsVCClosures = () -> Void
     var skipToChartsVCClosures: SkipToChartsVCClosures!
     
+    typealias SkipToAntForestVCClosures = () -> Void
+    var skipToAntForestVCClosures: SkipToAntForestVCClosures!
+    
     
     
     override init(frame: CGRect) {
@@ -137,6 +140,9 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
             
         case 14:
             self.skipToChartsVCClosures()
+            
+        case 15:
+            self.skipToAntForestVCClosures()
             
         default:
             break

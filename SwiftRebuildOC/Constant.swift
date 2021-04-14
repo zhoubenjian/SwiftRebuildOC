@@ -12,7 +12,9 @@ import PKHUD
 
 // MARK: - 屏幕宽高
 let SCREENWIDTH = UIScreen.main.bounds.width            // 屏幕宽
-let SCREENHEIGHT = UIScreen.main.bounds.height        // 屏幕高
+let SCREENHEIGHT = UIScreen.main.bounds.height          // 屏幕高
+let TABBARHEIGHT: CGFloat = (SCREENHEIGHT >= 812) ? 83 : 49         // 导航栏高度
+let CONTENTVIEWHEIGHT: CGFloat = SCREENHEIGHT - TABBARHEIGHT        // 页面高度
 
 
 

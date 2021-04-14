@@ -13,4 +13,6 @@ CollectionView画廊效果；
 添加折线图表；
 添加饼图；
 分组视图添加点击打印；
-修改导航栏背景颜色，添加SwipeDeleteVC相关（实现TableViewCell左滑删除）
+修改导航栏背景颜色，添加SwipeDeleteVC相关（实现TableViewCell左滑删除）;
+添加仿蚂蚁森林能量效果；
+
