@@ -16,7 +16,7 @@ class AntForestVC: BaseVC {
         super.viewDidLoad()
 
         self.navigationItem.title = "AntForest"
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .blue
         
         self.createUI()
     }
@@ -30,6 +30,14 @@ class AntForestVC: BaseVC {
         
         self.mainView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview();
+        }
+        
+        
+        
+        self.mainView.countTimeClosures = {(t) in
+            
+            
+            
         }
     }
 

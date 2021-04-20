@@ -18,6 +18,7 @@ class BaseVC: UIViewController {
         self.navigationController?.navigationBar.tintColor = .white
         
         self.view.backgroundColor = .white
+        
     }
 
 }

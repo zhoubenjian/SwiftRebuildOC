@@ -94,6 +94,7 @@ func labelProperty(label: UILabel, bgColor: UIColor , bgColorStr: String, textSt
 
 // MARK: - button相关
 func buttonProperty(btn: UIButton, bgColor: UIColor, bgColorStr: String, titleStr: String, titleFont: CGFloat, titleColorStr: String, titleAlignment: NSTextAlignment) {
+    
     if bgColorStr.isEmpty {
         btn.backgroundColor = bgColor
     } else {
@@ -128,6 +129,14 @@ func getCurrentTime() -> String {
     let timeStr = dateformatter.string(from: now)
 
     return timeStr
+}
+
+func secondToHourMinute(second: Int64) -> String {
+    
+    let h = second / 3600       // 时
+    let m = second % 3600 / 60  // 分
+    
+    return String(format: "%02d:%02d", h, m)
 }
 
 
