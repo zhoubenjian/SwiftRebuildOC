@@ -16,7 +16,7 @@ class AntForestVC: BaseVC {
         super.viewDidLoad()
 
         self.navigationItem.title = "AntForest"
-        self.view.backgroundColor = .blue
+        self.view.backgroundColor = colorWithHex(hexColorStr: "#00BFFF")
         
         self.createUI()
     }

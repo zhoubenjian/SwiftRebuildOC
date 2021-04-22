@@ -53,9 +53,9 @@ class AntForestView: UIView {
             btn.isEnabled = false   // 不可点击
             btn.setTitle("绿色\n能量\(i)", for: .normal)
             btn.titleLabel?.numberOfLines = 0
-            btn.layer.cornerRadius = 30;
-            btn.layer.masksToBounds = true;
-            btnArray.append(btn);
+            btn.layer.cornerRadius = 30
+            btn.layer.masksToBounds = true
+            btnArray.append(btn)
             self.addSubview(btn)
             
             
@@ -70,7 +70,7 @@ class AntForestView: UIView {
             // 横坐标范围
             let x: Int = Int(arc4random()) % Int(SCREENWIDTH - 60)
             // 纵坐标范围
-            let y: Int = Int(arc4random()) % Int(CONTENTVIEWHEIGHT - 60)
+            let y: Int = Int(arc4random()) % Int(CONTENTVIEWHEIGHT - 60 - 600) + 70
             btn.snp.makeConstraints { (make) in
                 make.width.height.equalTo(60)
                 make.left.equalTo(self).offset(x)

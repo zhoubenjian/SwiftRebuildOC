@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.nav?.navigationBar.isTranslucent = false
         self.nav?.navigationBar.shadowImage = UIImage()
-        self.nav?.navigationBar.barTintColor = colorWithHex(hexColorStr: "#FFC0CB")     // #FE4D4D
+        self.nav?.navigationBar.barTintColor = colorWithHex(hexColorStr: "#EE82EE")     //  #FFC0CB #FE4D4D
         let dic: NSDictionary = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17.0)]
         self.nav?.navigationBar.titleTextAttributes = dic as? [NSAttributedString.Key: AnyObject]
         self.window?.rootViewController = nav
