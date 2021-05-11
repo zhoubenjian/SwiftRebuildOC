@@ -1,37 +1,38 @@
 //
-//  AntForestVC.swift
+//  FootballFieldVC.swift
 //  SwiftRebuildOC
 //
-//  Created by Benjamin on 2021/4/14.
+//  Created by 周本健 on 2021/5/8.
 //  Copyright © 2021 com.Personal.Benjamin. All rights reserved.
 //
 
 import UIKit
 
-class AntForestVC: BaseVC {
+class FootballFieldVC: BaseVC {
     
-    var mainView: AntForestView!
+    var mainView: FootballFieldView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "AntForest"
-        self.view.backgroundColor = colorWithHex(hexColorStr: "#00BFFF")
+        self.navigationItem.title = "FootballField"
+        self.view.backgroundColor = .white
         
         self.createUI()
     }
     
-    func createUI()  {
+
+    func createUI() {
         
-        self.mainView = AntForestView()
+        self.mainView = FootballFieldView()
         self.view.addSubview(self.mainView)
         
         
         
         self.mainView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview();
+            make.edges.equalToSuperview()
         }
-        
     }
 
 }

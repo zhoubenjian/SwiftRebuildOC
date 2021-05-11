@@ -52,6 +52,9 @@
 		E481FCE424751571001F5F60 /* SectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481FCE324751571001F5F60 /* SectionVC.swift */; };
 		E481FCE6247515A4001F5F60 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481FCE5247515A4001F5F60 /* SectionView.swift */; };
 		E481FCE924752596001F5F60 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E481FCE824752596001F5F60 /* SectionHeaderView.swift */; };
+		E4892DF626468801001D3298 /* FootballFieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4892DF526468801001D3298 /* FootballFieldVC.swift */; };
+		E4892DFB2646881E001D3298 /* FootballFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4892DFA2646881E001D3298 /* FootballFieldView.swift */; };
+		E4892E0026468BDF001D3298 /* FootballFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4892DFF26468BDF001D3298 /* FootballFieldTableViewCell.swift */; };
 		E4C522D4246E78350056333B /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C522D3246E78350056333B /* GroupVC.swift */; };
 		E4C522D6246E78470056333B /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C522D5246E78470056333B /* GroupView.swift */; };
 		E4E9A55D255D257500B56991 /* SwipeDeleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E9A55C255D257500B56991 /* SwipeDeleteVC.swift */; };
@@ -132,6 +135,9 @@
 		E481FCE324751571001F5F60 /* SectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionVC.swift; sourceTree = "<group>"; };
 		E481FCE5247515A4001F5F60 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		E481FCE824752596001F5F60 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		E4892DF526468801001D3298 /* FootballFieldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballFieldVC.swift; sourceTree = "<group>"; };
+		E4892DFA2646881E001D3298 /* FootballFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballFieldView.swift; sourceTree = "<group>"; };
+		E4892DFF26468BDF001D3298 /* FootballFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballFieldTableViewCell.swift; sourceTree = "<group>"; };
 		E4C522D3246E78350056333B /* GroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
 		E4C522D5246E78470056333B /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		E4E9A55C255D257500B56991 /* SwipeDeleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDeleteVC.swift; sourceTree = "<group>"; };
@@ -252,6 +258,7 @@
 				E41EC3FC24D269F1000915AD /* ChartsVC.swift */,
 				E4F566CF24D408810046AF68 /* Charts */,
 				E41309182626F2D7005114A3 /* AntForestVC.swift */,
+				E4892DF526468801001D3298 /* FootballFieldVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -272,6 +279,7 @@
 				E4F566CD24D3F6670046AF68 /* ChartsView.swift */,
 				E4F566D024D4089D0046AF68 /* Charts */,
 				E413091D2626F2EC005114A3 /* AntForestView.swift */,
+				E4892DFA2646881E001D3298 /* FootballFieldView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,6 +308,7 @@
 				E461C444246B8A4200032911 /* AdaptiveTableViewCell.swift */,
 				E461C445246B8A4200032911 /* HomeTableViewCell.swift */,
 				E456A61A246F91AF008203AB /* GroupTableViewCell.swift */,
+				E4892DFF26468BDF001D3298 /* FootballFieldTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -532,6 +541,7 @@
 				E45397E9247B6DE70094925C /* GalleryCollectionViewCell.swift in Sources */,
 				E461C447246B8A4200032911 /* HomeTableViewCell.swift in Sources */,
 				E461C408246B88FD00032911 /* ViewController.swift in Sources */,
+				E4892DFB2646881E001D3298 /* FootballFieldView.swift in Sources */,
 				E46325A0247CBAE700020EAB /* SimpleCalculatorView.swift in Sources */,
 				E463259E247CBAC900020EAB /* SimpleCalculatorVC.swift in Sources */,
 				E4094E0424D90C7300ADF792 /* PieChartsView.swift in Sources */,
@@ -567,6 +577,7 @@
 				E461C456246B8A7A00032911 /* HomeView.swift in Sources */,
 				E45397E7247B67B20094925C /* GalleryView.swift in Sources */,
 				E461C44D246B8A6B00032911 /* HighCollectionViewCell.swift in Sources */,
+				E4892DF626468801001D3298 /* FootballFieldVC.swift in Sources */,
 				E4E9A562255D259100B56991 /* SwipeDeleteView.swift in Sources */,
 				E461C404246B88FD00032911 /* AppDelegate.swift in Sources */,
 				E4C522D6246E78470056333B /* GroupView.swift in Sources */,
@@ -574,6 +585,7 @@
 				E45397E3247B65E50094925C /* GalleryLayout.swift in Sources */,
 				E408DC9224D811A1001C5551 /* LineChartsView.swift in Sources */,
 				E413091E2626F2EC005114A3 /* AntForestView.swift in Sources */,
+				E4892E0026468BDF001D3298 /* FootballFieldTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,7 @@ class HomeVC: BaseVC {
         self.navigationItem.title = "首页"
         self.view.backgroundColor = .white
     
-        self.styleArray = ["value1", "value2", "subtitle", "default", "adaptiveTableView", "commonCollectionView", "waterCollectionView", "complexVC", "groupVC", "swipeDeleteVC", "sectionVC", "galleryVC", "simpleCalculatorVC", "WKWebView", "ChartsVC", "AntForestVC"]
+        self.styleArray = ["value1", "value2", "subtitle", "default", "adaptiveTableView", "commonCollectionView", "waterCollectionView", "complexVC", "groupVC", "swipeDeleteVC", "sectionVC", "galleryVC", "simpleCalculatorVC", "WKWebView", "ChartsVC", "AntForestVC", "FootballFieldTableVC"]
         self.createUI()
     }
     
@@ -119,6 +119,12 @@ class HomeVC: BaseVC {
             let aVC: AntForestVC = AntForestVC()
             self.navigationController?.pushViewController(aVC, animated: true)
             
+        }
+        
+        self.mainView.skipToFootballFieldVCClosures = {
+            
+            let fVC: FootballFieldVC = FootballFieldVC()
+            self.navigationController?.pushViewController(fVC, animated: true)
         }
         
     }

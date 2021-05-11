@@ -15,6 +15,11 @@ let SCREENWIDTH = UIScreen.main.bounds.width            // 屏幕宽
 let SCREENHEIGHT = UIScreen.main.bounds.height          // 屏幕高
 let TABBARHEIGHT: CGFloat = (SCREENHEIGHT >= 812) ? 83 : 49         // 导航栏高度
 let CONTENTVIEWHEIGHT: CGFloat = SCREENHEIGHT - TABBARHEIGHT        // 页面高度
+let BOTTOMHEIGHT: CGFloat = (SCREENHEIGHT >= 812) ? 34 : 0          // 刘海屏底部安全高度
+// MARK: - Stadio Giuseppe Meazza: 105 x 65
+let STADIOGIUSEPPEMEAZZALENGTH: CGFloat = 105
+let STADIOGIUSEPPEMEAZZAWIDTH: CGFloat = 65
+
 
 
 
@@ -73,7 +78,17 @@ func colorWithHex(hexColorStr: String) -> UIColor {
 
 
 
-// MARK: - label相关
+//// MARK: - UIView相关
+//func viewWithSideRounded(view: UIView, rc1: UIRectCorner, rc2: UIRectCorner) {
+//    
+//    var maskPath: UIBezierPath = UIBezierPath.init(roundedRect: view.bounds, byRoundingCorners: rc1, cornerRadii: CGSize(rc1 as! Decoder, rc2 as! Decoder))
+//    var <#name#> = <#value#>
+//    
+//}
+
+
+
+// MARK: - UILabel相关
 func labelProperty(label: UILabel, bgColor: UIColor , bgColorStr: String, textStr: String, textColor: UIColor, textColorStr: String, textFont: CGFloat, textAlignment: NSTextAlignment) {
     if bgColorStr.isEmpty {
         label.backgroundColor = bgColor
@@ -92,7 +107,7 @@ func labelProperty(label: UILabel, bgColor: UIColor , bgColorStr: String, textSt
 
 
 
-// MARK: - button相关
+// MARK: - UIButton相关
 func buttonProperty(btn: UIButton, bgColor: UIColor, bgColorStr: String, titleStr: String, titleFont: CGFloat, titleColorStr: String, titleAlignment: NSTextAlignment) {
     
     if bgColorStr.isEmpty {

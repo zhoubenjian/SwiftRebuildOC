@@ -47,6 +47,9 @@ class HomeView: UIView {
     typealias SkipToAntForestVCClosures = () -> Void
     var skipToAntForestVCClosures: SkipToAntForestVCClosures!
     
+    typealias SkipToFootballFieldVCClosures = () -> Void
+    var skipToFootballFieldVCClosures: SkipToFootballFieldVCClosures!
+    
     
     
     override init(frame: CGRect) {
@@ -143,6 +146,9 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
             
         case 15:
             self.skipToAntForestVCClosures()
+            
+        case 16:
+            self.skipToFootballFieldVCClosures()
             
         default:
             break
