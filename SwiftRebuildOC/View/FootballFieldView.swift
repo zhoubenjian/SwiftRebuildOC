@@ -11,15 +11,21 @@ import UIKit
 class FootballFieldView: UIView {
     
     var footballFieldTableView: UITableView!
-    var smallForbiddenAreaView: UIView!
-    var bigForbiddenAreaView: UIView!
-    var pointView: UIView!
+    var smallForbiddenAreaView1: UIView!        // 小禁区(上方，18.32m * 5.5m)
+    var bigForbiddenAreaView1: UIView!          // 大禁区(上方，40.32m * 16.5m)
+    var goalView1: UIView!                      // 球门(上方，2.44m * 7.32m)
+    var pointView1: UIView!                     // 点球点(上方，距离门线11m)
     var centerCircleView: UIView!
     var centerPointView: UIView!
+    var smallForbiddenAreaView2: UIView!        // 小禁区(下方，18.32m * 5.5m)
+    var bigForbiddenAreaView2: UIView!          // 大禁区(下方，40.32m * 16.5m)
+    var goalView2: UIView!                      // 球门(下方，2.44m * 7.32m)
+    var pointView2: UIView!                     // 点球点(下方，距离门线11m)
     
     
     var tableViewHeight: CGFloat!
     var cellHeight: CGFloat!
+    var cornersView: CornersView!
     
     
     override init(frame: CGRect) {
@@ -29,6 +35,7 @@ class FootballFieldView: UIView {
         self.cellHeight = self.tableViewHeight / 18
         
         self.createViewUI()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -52,20 +59,25 @@ class FootballFieldView: UIView {
         self.footballFieldTableView.dataSource = self
         self.addSubview(self.footballFieldTableView)
         
-        self.smallForbiddenAreaView = UIView()
-        self.smallForbiddenAreaView.layer.borderWidth = 1.5
-        self.smallForbiddenAreaView.layer.borderColor = UIColor.white.cgColor
-        self.footballFieldTableView.addSubview(self.smallForbiddenAreaView)
+        self.smallForbiddenAreaView1 = UIView()
+        self.smallForbiddenAreaView1.layer.borderWidth = 1.5
+        self.smallForbiddenAreaView1.layer.borderColor = UIColor.white.cgColor
+        self.footballFieldTableView.addSubview(self.smallForbiddenAreaView1)
         
-        self.bigForbiddenAreaView = UIView()
-        self.bigForbiddenAreaView.layer.borderWidth = 1.5
-        self.bigForbiddenAreaView.layer.borderColor = UIColor.white.cgColor
-        self.footballFieldTableView.addSubview(self.bigForbiddenAreaView)
+        self.bigForbiddenAreaView1 = UIView()
+        self.bigForbiddenAreaView1.layer.borderWidth = 1.5
+        self.bigForbiddenAreaView1.layer.borderColor = UIColor.white.cgColor
+        self.footballFieldTableView.addSubview(self.bigForbiddenAreaView1)
         
-        self.pointView = UIView()
-        self.pointView.layer.cornerRadius = 2
-        self.pointView.backgroundColor = .white
-        self.bigForbiddenAreaView.addSubview(self.pointView)
+        self.goalView1 = UIView()
+        self.goalView1.layer.borderWidth = 1.5
+        self.goalView1.layer.borderColor = UIColor.black.cgColor;
+        self.footballFieldTableView.addSubview(self.goalView1)
+        
+        self.pointView1 = UIView()
+        self.pointView1.layer.cornerRadius = 2
+        self.pointView1.backgroundColor = .white
+        self.bigForbiddenAreaView1.addSubview(self.pointView1)
         
         self.centerCircleView = UIView()
         self.centerCircleView.layer.cornerRadius = SCREENWIDTH / 65 * 9.15 / 2      // 圆角
@@ -78,26 +90,53 @@ class FootballFieldView: UIView {
         self.centerPointView.backgroundColor = .white
         self.centerCircleView.addSubview(self.centerPointView)
         
+        self.smallForbiddenAreaView2 = UIView()
+        self.smallForbiddenAreaView2.layer.borderWidth = 1.5
+        self.smallForbiddenAreaView2.layer.borderColor = UIColor.white.cgColor
+        self.footballFieldTableView.addSubview(self.smallForbiddenAreaView2)
+        
+        self.bigForbiddenAreaView2 = UIView()
+        self.bigForbiddenAreaView2.layer.borderWidth = 1.5
+        self.bigForbiddenAreaView2.layer.borderColor = UIColor.white.cgColor
+        self.footballFieldTableView.addSubview(self.bigForbiddenAreaView2)
+        
+        self.goalView2 = UIView()
+        self.goalView2.layer.borderWidth = 1.5
+        self.goalView2.layer.borderColor = UIColor.black.cgColor;
+        self.footballFieldTableView.addSubview(self.goalView2)
+
+        self.pointView2 = UIView()
+        self.pointView2.layer.cornerRadius = 2
+        self.pointView2.backgroundColor = .white
+        self.bigForbiddenAreaView1.addSubview(self.pointView2)
         
         
-        self.smallForbiddenAreaView.snp.makeConstraints { (make) in
+        
+        self.smallForbiddenAreaView1.snp.makeConstraints { (make) in
             make.width.equalTo(SCREENWIDTH / 65 * 18.32)
             make.height.equalTo(SCREENWIDTH / 65 * 5.5)
             make.centerX.equalToSuperview()
             make.top.equalToSuperview()
         }
         
-        self.bigForbiddenAreaView.snp.makeConstraints { (make) in
+        self.bigForbiddenAreaView1.snp.makeConstraints { (make) in
             make.width.equalTo(SCREENWIDTH / 65 * 40.32)
             make.height.equalTo(SCREENWIDTH / 65 * 16.5)
             make.centerX.equalToSuperview()
             make.top.equalToSuperview()
         }
         
-        self.pointView.snp.makeConstraints { (make) in
+        self.goalView1.snp.makeConstraints { (make) in
+            make.width.equalTo(SCREENWIDTH / 65 * 7.32)
+            make.height.equalTo(SCREENWIDTH / 65 * 2.44)
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview()
+        }
+        
+        self.pointView1.snp.makeConstraints { (make) in
             make.width.height.equalTo(4)
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.bigForbiddenAreaView.snp.top).offset(SCREENWIDTH / 65 * 11)
+            make.top.equalTo(self.bigForbiddenAreaView1.snp.top).offset(SCREENWIDTH / 65 * 11)
         }
         
         self.centerCircleView.snp.makeConstraints { (make) in
@@ -110,6 +149,38 @@ class FootballFieldView: UIView {
             make.width.height.equalTo(4)
             make.centerX.centerY.equalToSuperview()
         }
+        
+        self.smallForbiddenAreaView2.snp.makeConstraints { (make) in
+            make.width.equalTo(SCREENWIDTH / 65 * 18.32)
+            make.height.equalTo(SCREENWIDTH / 65 * 5.5)
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(self.footballFieldTableView.snp.top).offset(self.tableViewHeight)
+        }
+        
+        self.bigForbiddenAreaView2.snp.makeConstraints { (make) in
+            make.width.equalTo(SCREENWIDTH / 65 * 40.32)
+            make.height.equalTo(SCREENWIDTH / 65 * 16.5)
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(self.footballFieldTableView.snp.top).offset(self.tableViewHeight)
+        }
+        
+        self.goalView2.snp.makeConstraints { (make) in
+            make.width.equalTo(SCREENWIDTH / 65 * 7.32)
+            make.height.equalTo(SCREENWIDTH / 65 * 2.44)
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(self.footballFieldTableView.snp.top).offset(self.tableViewHeight)
+        }
+
+        self.pointView2.snp.makeConstraints { (make) in
+            make.width.height.equalTo(4)
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(self.footballFieldTableView.snp.top).offset(self.tableViewHeight - SCREENWIDTH / 65 * 11)
+        }
+    }
+    
+    func createCorners() {
+        
+        /*** 创建角球区域 ***/
     }
     
 }
@@ -131,6 +202,7 @@ extension FootballFieldView: UITableViewDelegate, UITableViewDataSource {
         
         if cell == nil {
             cell = FootballFieldTableViewCell.init(style: .default, reuseIdentifier: "footballfield")
+            // 取消选中样式
             cell.selectionStyle = .none
         }
         
