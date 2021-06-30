@@ -2,19 +2,36 @@
 //  CornersView.swift
 //  SwiftRebuildOC
 //
-//  Created by 周本健 on 2021/6/29.
+//  Created by Benjamin on 2021/6/29.
 //  Copyright © 2021 com.Personal.Benjamin. All rights reserved.
 //
 
 import UIKit
 
+/*** UIBezierPath（贝塞尔曲线）绘图 ***/
 class CornersView: UIView {
     
-    var path: UIBezierPath!
+    var centerOfCircle: CGPoint!        // 绘制的圆心
+    var radius: CGFloat!                // 半径
+    var startAngle: CGFloat!            // 开始角度（弧度制）
+    var endAngle: CGFloat!              // 结束角度（弧度制）
+    var lineWidth: CGFloat!             // 绘制宽度
+    var lineColor: UIColor!             // 绘制颜色
 
-    init(frame: CGRect, lineWidth: CGFloat, lineColor: UIColor) {
+    
+    // MARK: 自定义初始化方法
+    init(frame: CGRect, centerOfCircle: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, lineWidth: CGFloat, lineColor: UIColor) {
         super.init(frame: frame)
         
+        // 初始化赋值
+        self.centerOfCircle = centerOfCircle
+        self.radius = radius
+        self.startAngle = startAngle
+        self.endAngle = endAngle
+        self.lineWidth = lineWidth
+        self.lineColor = lineColor
+        
+        // setNeedsDisplay异步执行的，它会自动调用drawRect方法
         self.setNeedsDisplay()
     }
     
@@ -23,18 +40,26 @@ class CornersView: UIView {
     }
     
     
+    
+    // MARK: 画图
     override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        // 调用
         self.createCorners()
-        //(coc: CGPoint(200, 200), r: 50, sa: 0, ea: -1/2 * M_PI)
     }
     
-    // 画角球点
+    // Bezier（贝塞尔曲线绘制：角球区域）
     func createCorners() {
         
-        self.path = UIBezierPath.init();
-        self.path.addArc(withCenter: CGPoint(x: 200, y: 200), radius: 50, startAngle: 0, endAngle: CGFloat(-1/2 * M_PI), clockwise: true)
-        self.path.lineWidth = 1.5
-        self.path.lineCapStyle = .round
-        colorWithHex(hexColorStr: "#FF7C08").setStroke()
+        let path: UIBezierPath! = UIBezierPath.init()
+        // Bezier画圆（弧）
+        path.addArc(withCenter: self.centerOfCircle, radius: self.radius, startAngle: self.startAngle, endAngle: self.endAngle, clockwise: true)
+        path.lineWidth = self.lineWidth
+        path.lineCapStyle = .round
+        UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0).setStroke()
+        
+        // 返回绘制后的图像
+        path.stroke()
     }
 }

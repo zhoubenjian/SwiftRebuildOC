@@ -17,7 +17,7 @@ class FootballFieldVC: BaseVC {
         super.viewDidLoad()
 
         self.navigationItem.title = "FootballField"
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .blue
         
         self.createUI()
     }

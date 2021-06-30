@@ -22,10 +22,14 @@ class FootballFieldView: UIView {
     var goalView2: UIView!                      // 球门(下方，2.44m * 7.32m)
     var pointView2: UIView!                     // 点球点(下方，距离门线11m)
     
+    var cornersView1: CornersView!              // 右上方角球（宽度1m的1/4圆弧）
+    var cornersView2: CornersView!              // 左上方角球（宽度1m的1/4圆弧）
+    var cornersView3: CornersView!              // 左下方角球（宽度1m的1/4圆弧）
+    var cornersView4: CornersView!              // 右下方角球（宽度1m的1/4圆弧）
     
     var tableViewHeight: CGFloat!
     var cellHeight: CGFloat!
-    var cornersView: CornersView!
+    
     
     
     override init(frame: CGRect) {
@@ -35,12 +39,14 @@ class FootballFieldView: UIView {
         self.cellHeight = self.tableViewHeight / 18
         
         self.createViewUI()
-        
+        // 绘制角球区域
+        self.createCorners()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     
     func createViewUI() {
@@ -178,9 +184,24 @@ class FootballFieldView: UIView {
         }
     }
     
+    // 绘制角球区域
     func createCorners() {
         
-        /*** 创建角球区域 ***/
+        self.cornersView1 = CornersView.init(frame: CGRect(x: SCREENWIDTH - 20, y: 0, width: 20, height: 20), centerOfCircle: CGPoint(x: 20, y: 0), radius: 20, startAngle: CGFloat(-1/2 * Double.pi), endAngle: CGFloat(-Double.pi), lineWidth: 1.5, lineColor: .white)
+        self.cornersView1.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.0)
+        self.footballFieldTableView.addSubview(self.cornersView1)
+        
+        self.cornersView2 = CornersView.init(frame: CGRect(x: 0, y: 0, width: 20, height: 20), centerOfCircle: CGPoint(x: 0, y: 0), radius: 20, startAngle: 0, endAngle: CGFloat(-1/2 * Double.pi), lineWidth: 1.5, lineColor: .white)
+        self.cornersView2.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.0)
+        self.footballFieldTableView.addSubview(self.cornersView2)
+        
+        self.cornersView3 = CornersView.init(frame: CGRect(x: 0, y: self.tableViewHeight - 20, width: 20, height: 20), centerOfCircle: CGPoint(x: 0, y: 20), radius: 20, startAngle: CGFloat(-3/2 * Double.pi), endAngle: CGFloat(-2 * Double.pi), lineWidth: 1.5, lineColor: .white)
+        self.cornersView3.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.0)
+        self.footballFieldTableView.addSubview(self.cornersView3)
+        
+        self.cornersView4 = CornersView.init(frame: CGRect(x: SCREENWIDTH - 20, y: self.tableViewHeight - 20, width: 20, height: 20), centerOfCircle: CGPoint(x: 20, y: 20), radius: 20, startAngle: CGFloat(-Double.pi), endAngle: CGFloat(-3/2 * Double.pi), lineWidth: 1.5, lineColor: .white)
+        self.cornersView4.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.0)
+        self.footballFieldTableView.addSubview(self.cornersView4)
     }
     
 }
@@ -216,6 +237,7 @@ extension FootballFieldView: UITableViewDelegate, UITableViewDataSource {
             cell.sectionView.backgroundColor = colorWithHex(hexColorStr: "#32CD32");
         }
         
+        // 中场半圆（上）
         if indexPath.row == 8 {
             
             let centerBottomView: UIView = UIView()
@@ -230,6 +252,7 @@ extension FootballFieldView: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
+        // 中场半圆（下）
         if indexPath.row == 9 {
             
             let centerBottomView: UIView = UIView()
