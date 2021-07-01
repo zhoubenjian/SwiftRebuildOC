@@ -11,8 +11,8 @@ import UIKit
 import PKHUD
 
 // MARK: - 屏幕宽高
-let SCREENWIDTH = UIScreen.main.bounds.width            // 屏幕宽
-let SCREENHEIGHT = UIScreen.main.bounds.height          // 屏幕高
+let SCREENWIDTH = UIScreen.main.bounds.width                        // 屏幕宽
+let SCREENHEIGHT = UIScreen.main.bounds.height                      // 屏幕高
 let TABBARHEIGHT: CGFloat = (SCREENHEIGHT >= 812) ? 83 : 49         // 导航栏高度
 let CONTENTVIEWHEIGHT: CGFloat = SCREENHEIGHT - TABBARHEIGHT        // 页面高度
 let BOTTOMHEIGHT: CGFloat = (SCREENHEIGHT >= 812) ? 34 : 0          // 刘海屏底部安全高度
@@ -75,16 +75,6 @@ func colorWithHex(hexColorStr: String) -> UIColor {
         return UIColor.clear
     }
 }
-
-
-
-//// MARK: - UIView相关
-//func viewWithSideRounded(view: UIView, rc1: UIRectCorner, rc2: UIRectCorner) {
-//    
-//    var maskPath: UIBezierPath = UIBezierPath.init(roundedRect: view.bounds, byRoundingCorners: rc1, cornerRadii: CGSize(rc1 as! Decoder, rc2 as! Decoder))
-//    var <#name#> = <#value#>
-//    
-//}
 
 
 

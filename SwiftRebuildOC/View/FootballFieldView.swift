@@ -29,6 +29,8 @@ class FootballFieldView: UIView {
     var middleFieldCircle: CornersView!         // 中场圆（贝塞尔曲线绘制）
     var midddleFieldPoint: UIView!              // 中场点
     
+    var penaltyArc1: CornersView!               // 罚球弧（上方，以点球点为圆心，半径9.15m弧)
+    var penaltyArc2: CornersView!               // 罚球弧（下方，以点球点为圆心，半径9.15m弧）
     
     var tableViewHeight: CGFloat!
     var cellHeight: CGFloat!
@@ -190,7 +192,6 @@ class FootballFieldView: UIView {
         self.footballFieldTableView.addSubview(self.cornersView4)
         
         
-        
         // MARK: MiddleField（中场）
         self.middleFieldCircle = CornersView.init(frame: CGRect(x: SCREENWIDTH / 2 - (SCREENWIDTH / 65 * 9.15) - 3, y: self.tableViewHeight / 2 - (SCREENWIDTH / 65 * 9.15) - 3, width: (SCREENWIDTH / 65 * 18.3) + 3, height: (SCREENWIDTH / 65 * 18.3) + 3), circleOfCenter: CGPoint(x: SCREENWIDTH / 65 * 9.15 + 1.5, y: SCREENWIDTH / 65 * 9.15 + 1.5), radius: SCREENWIDTH / 65 * 9.15, startAngle: 0, endAngle: CGFloat(2 * Double.pi), lineWidth: 1.5, lineColor: .white)
         self.middleFieldCircle.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.0)
@@ -206,6 +207,16 @@ class FootballFieldView: UIView {
         self.middleFieldCircle.addSubview(self.midddleFieldPoint)
         
         
+        // Mark: PenaltyArc(罚球弧)
+        self.penaltyArc1 = CornersView.init(frame: CGRect(x: SCREENWIDTH / 2 - (SCREENWIDTH / 65 * 7.33), y: SCREENWIDTH / 65 * 11, width: SCREENWIDTH / 65 * 14.66, height: SCREENWIDTH / 65 * 9.15 + 1.5), circleOfCenter: CGPoint(x: SCREENWIDTH / 65 * 7.33, y: 0), radius: SCREENWIDTH / 65 * 9.15, startAngle: CGFloat(1/5 * Double.pi), endAngle: CGFloat(4/5 * Double.pi), lineWidth: 1.5, lineColor: .white)
+        self.penaltyArc1.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.0)
+        self.footballFieldTableView.addSubview(self.penaltyArc1)
+        
+        self.penaltyArc2 = CornersView.init(frame: CGRect(x: SCREENWIDTH / 2 - (SCREENWIDTH / 65 * 7.33), y: self.tableViewHeight - (SCREENWIDTH / 65 * 11) - SCREENWIDTH / 65 * 9.15, width: SCREENWIDTH / 65 * 14.66, height: SCREENWIDTH / 65 * 9.15 + 1.5), circleOfCenter: CGPoint(x: SCREENWIDTH / 65 * 7.33, y: SCREENWIDTH / 65 * 9.15 + 1.5), radius: SCREENWIDTH / 65 * 9.15, startAngle: CGFloat(6/5 * Double.pi), endAngle: CGFloat(9/5 * Double.pi), lineWidth: 1.5, lineColor: .white)
+        self.penaltyArc2.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.0)
+        self.footballFieldTableView.addSubview(self.penaltyArc2)
+        
+        
         
         self.middleLineView.snp.makeConstraints { (make) in
             make.width.equalToSuperview()
@@ -218,6 +229,7 @@ class FootballFieldView: UIView {
             make.centerX.equalToSuperview()
             make.top.equalTo(self.footballFieldTableView.snp.top).offset(self.tableViewHeight / 2 - 2)
         }
+        
     }
     
 }
@@ -252,36 +264,6 @@ extension FootballFieldView: UITableViewDelegate, UITableViewDataSource {
             
             cell.sectionView.backgroundColor = colorWithHex(hexColorStr: "#32CD32");
         }
-        
-//        // 中场半圆（上）
-//        if indexPath.row == 8 {
-//
-//            let centerBottomView: UIView = UIView()
-//            centerBottomView.backgroundColor = .white
-//            cell.addSubview(centerBottomView)
-//
-//            centerBottomView.snp.makeConstraints { (make) in
-//                make.width.equalToSuperview()
-//                make.height.equalTo(1.5)
-//                make.centerX.equalToSuperview()
-//                make.bottom.equalTo(cell.snp.bottom)
-//            }
-//        }
-//
-//        // 中场半圆（下）
-//        if indexPath.row == 9 {
-//
-//            let centerBottomView: UIView = UIView()
-//            centerBottomView.backgroundColor = .white
-//            cell.addSubview(centerBottomView)
-//
-//            centerBottomView.snp.makeConstraints { (make) in
-//                make.width.equalToSuperview()
-//                make.height.equalTo(1.5)
-//                make.centerX.equalToSuperview()
-//                make.bottom.equalTo(cell.snp.top)
-//            }
-//        }
         
         return cell
     }
