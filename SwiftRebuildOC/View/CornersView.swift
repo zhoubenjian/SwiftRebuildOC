@@ -11,7 +11,7 @@ import UIKit
 /*** UIBezierPath（贝塞尔曲线）绘图 ***/
 class CornersView: UIView {
     
-    var centerOfCircle: CGPoint!        // 绘制的圆心
+    var circleOfCenter: CGPoint!        // 绘制的圆心
     var radius: CGFloat!                // 半径
     var startAngle: CGFloat!            // 开始角度（弧度制）
     var endAngle: CGFloat!              // 结束角度（弧度制）
@@ -20,11 +20,11 @@ class CornersView: UIView {
 
     
     // MARK: 自定义初始化方法
-    init(frame: CGRect, centerOfCircle: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, lineWidth: CGFloat, lineColor: UIColor) {
+    init(frame: CGRect, circleOfCenter: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, lineWidth: CGFloat, lineColor: UIColor) {
         super.init(frame: frame)
         
         // 初始化赋值
-        self.centerOfCircle = centerOfCircle
+        self.circleOfCenter = circleOfCenter
         self.radius = radius
         self.startAngle = startAngle
         self.endAngle = endAngle
@@ -54,7 +54,7 @@ class CornersView: UIView {
         
         let path: UIBezierPath! = UIBezierPath.init()
         // Bezier画圆（弧）
-        path.addArc(withCenter: self.centerOfCircle, radius: self.radius, startAngle: self.startAngle, endAngle: self.endAngle, clockwise: true)
+        path.addArc(withCenter: self.circleOfCenter, radius: self.radius, startAngle: self.startAngle, endAngle: self.endAngle, clockwise: true)
         path.lineWidth = self.lineWidth
         path.lineCapStyle = .round
         UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0).setStroke()

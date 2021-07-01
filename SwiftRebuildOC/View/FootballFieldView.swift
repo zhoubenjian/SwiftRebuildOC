@@ -15,8 +15,6 @@ class FootballFieldView: UIView {
     var bigForbiddenAreaView1: UIView!          // 大禁区(上方，40.32m * 16.5m)
     var goalView1: UIView!                      // 球门(上方，2.44m * 7.32m)
     var pointView1: UIView!                     // 点球点(上方，距离门线11m)
-    var centerCircleView: UIView!
-    var centerPointView: UIView!
     var smallForbiddenAreaView2: UIView!        // 小禁区(下方，18.32m * 5.5m)
     var bigForbiddenAreaView2: UIView!          // 大禁区(下方，40.32m * 16.5m)
     var goalView2: UIView!                      // 球门(下方，2.44m * 7.32m)
@@ -26,6 +24,11 @@ class FootballFieldView: UIView {
     var cornersView2: CornersView!              // 左上方角球（宽度1m的1/4圆弧）
     var cornersView3: CornersView!              // 左下方角球（宽度1m的1/4圆弧）
     var cornersView4: CornersView!              // 右下方角球（宽度1m的1/4圆弧）
+    
+    var middleLineView: UIView!                 // 中场线
+    var middleFieldCircle: CornersView!         // 中场圆（贝塞尔曲线绘制）
+    var midddleFieldPoint: UIView!              // 中场点
+    
     
     var tableViewHeight: CGFloat!
     var cellHeight: CGFloat!
@@ -39,8 +42,8 @@ class FootballFieldView: UIView {
         self.cellHeight = self.tableViewHeight / 18
         
         self.createViewUI()
-        // 绘制角球区域
-        self.createCorners()
+        // 绘制角球区域，中场区域
+        self.createCornersMiddle()
     }
     
     required init?(coder: NSCoder) {
@@ -85,17 +88,6 @@ class FootballFieldView: UIView {
         self.pointView1.backgroundColor = .white
         self.bigForbiddenAreaView1.addSubview(self.pointView1)
         
-        self.centerCircleView = UIView()
-        self.centerCircleView.layer.cornerRadius = SCREENWIDTH / 65 * 9.15 / 2      // 圆角
-        self.centerCircleView.layer.borderWidth = 2
-        self.centerCircleView.layer.borderColor = UIColor.white.cgColor
-        self.footballFieldTableView.addSubview(self.centerCircleView)
-        
-        self.centerPointView = UIView()
-        self.centerPointView.layer.cornerRadius = 2
-        self.centerPointView.backgroundColor = .white
-        self.centerCircleView.addSubview(self.centerPointView)
-        
         self.smallForbiddenAreaView2 = UIView()
         self.smallForbiddenAreaView2.layer.borderWidth = 1.5
         self.smallForbiddenAreaView2.layer.borderColor = UIColor.white.cgColor
@@ -134,7 +126,7 @@ class FootballFieldView: UIView {
         
         self.goalView1.snp.makeConstraints { (make) in
             make.width.equalTo(SCREENWIDTH / 65 * 7.32)
-            make.height.equalTo(SCREENWIDTH / 65 * 2.44)
+            make.height.equalTo(SCREENWIDTH / 65 * 2.44)   
             make.centerX.equalToSuperview()
             make.top.equalToSuperview()
         }
@@ -143,17 +135,6 @@ class FootballFieldView: UIView {
             make.width.height.equalTo(4)
             make.centerX.equalToSuperview()
             make.top.equalTo(self.bigForbiddenAreaView1.snp.top).offset(SCREENWIDTH / 65 * 11)
-        }
-        
-        self.centerCircleView.snp.makeConstraints { (make) in
-            make.width.height.equalTo(SCREENWIDTH / 65 * 9.15)
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
-        }
-        
-        self.centerPointView.snp.makeConstraints { (make) in
-            make.width.height.equalTo(4)
-            make.centerX.centerY.equalToSuperview()
         }
         
         self.smallForbiddenAreaView2.snp.makeConstraints { (make) in
@@ -184,24 +165,59 @@ class FootballFieldView: UIView {
         }
     }
     
-    // 绘制角球区域
-    func createCorners() {
+    // 绘制角球区域，中场区域
+    func createCornersMiddle() {
         
-        self.cornersView1 = CornersView.init(frame: CGRect(x: SCREENWIDTH - 20, y: 0, width: 20, height: 20), centerOfCircle: CGPoint(x: 20, y: 0), radius: 20, startAngle: CGFloat(-1/2 * Double.pi), endAngle: CGFloat(-Double.pi), lineWidth: 1.5, lineColor: .white)
+        // MARK: Corners（角球区）
+        self.cornersView1 = CornersView.init(frame: CGRect(x: SCREENWIDTH - 20, y: 0, width: 20, height: 20), circleOfCenter: CGPoint(x: 20, y: 0), radius: 20, startAngle: CGFloat(-1/2 * Double.pi), endAngle: CGFloat(-Double.pi), lineWidth: 1.5, lineColor: .white)
+        // 透明色
         self.cornersView1.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.0)
         self.footballFieldTableView.addSubview(self.cornersView1)
         
-        self.cornersView2 = CornersView.init(frame: CGRect(x: 0, y: 0, width: 20, height: 20), centerOfCircle: CGPoint(x: 0, y: 0), radius: 20, startAngle: 0, endAngle: CGFloat(-1/2 * Double.pi), lineWidth: 1.5, lineColor: .white)
+        self.cornersView2 = CornersView.init(frame: CGRect(x: 0, y: 0, width: 20, height: 20), circleOfCenter: CGPoint(x: 0, y: 0), radius: 20, startAngle: 0, endAngle: CGFloat(-1/2 * Double.pi), lineWidth: 1.5, lineColor: .white)
+        // 透明色
         self.cornersView2.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.0)
         self.footballFieldTableView.addSubview(self.cornersView2)
         
-        self.cornersView3 = CornersView.init(frame: CGRect(x: 0, y: self.tableViewHeight - 20, width: 20, height: 20), centerOfCircle: CGPoint(x: 0, y: 20), radius: 20, startAngle: CGFloat(-3/2 * Double.pi), endAngle: CGFloat(-2 * Double.pi), lineWidth: 1.5, lineColor: .white)
+        self.cornersView3 = CornersView.init(frame: CGRect(x: 0, y: self.tableViewHeight - 20, width: 20, height: 20), circleOfCenter: CGPoint(x: 0, y: 20), radius: 20, startAngle: CGFloat(-3/2 * Double.pi), endAngle: CGFloat(-2 * Double.pi), lineWidth: 1.5, lineColor: .white)
+        // 透明色
         self.cornersView3.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.0)
         self.footballFieldTableView.addSubview(self.cornersView3)
         
-        self.cornersView4 = CornersView.init(frame: CGRect(x: SCREENWIDTH - 20, y: self.tableViewHeight - 20, width: 20, height: 20), centerOfCircle: CGPoint(x: 20, y: 20), radius: 20, startAngle: CGFloat(-Double.pi), endAngle: CGFloat(-3/2 * Double.pi), lineWidth: 1.5, lineColor: .white)
+        self.cornersView4 = CornersView.init(frame: CGRect(x: SCREENWIDTH - 20, y: self.tableViewHeight - 20, width: 20, height: 20), circleOfCenter: CGPoint(x: 20, y: 20), radius: 20, startAngle: CGFloat(-Double.pi), endAngle: CGFloat(-3/2 * Double.pi), lineWidth: 1.5, lineColor: .white)
+        // 透明色
         self.cornersView4.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.0)
         self.footballFieldTableView.addSubview(self.cornersView4)
+        
+        
+        
+        // MARK: MiddleField（中场）
+        self.middleFieldCircle = CornersView.init(frame: CGRect(x: SCREENWIDTH / 2 - (SCREENWIDTH / 65 * 9.15) - 3, y: self.tableViewHeight / 2 - (SCREENWIDTH / 65 * 9.15) - 3, width: (SCREENWIDTH / 65 * 18.3) + 3, height: (SCREENWIDTH / 65 * 18.3) + 3), circleOfCenter: CGPoint(x: SCREENWIDTH / 65 * 9.15 + 1.5, y: SCREENWIDTH / 65 * 9.15 + 1.5), radius: SCREENWIDTH / 65 * 9.15, startAngle: 0, endAngle: CGFloat(2 * Double.pi), lineWidth: 1.5, lineColor: .white)
+        self.middleFieldCircle.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.0)
+        self.footballFieldTableView.addSubview(self.middleFieldCircle)
+        
+        self.middleLineView = UIView()
+        self.middleLineView.backgroundColor = .white
+        self.footballFieldTableView.addSubview(self.middleLineView)
+        
+        self.midddleFieldPoint = UIView()
+        self.midddleFieldPoint.backgroundColor = .white
+        self.midddleFieldPoint.layer.cornerRadius = 2
+        self.middleFieldCircle.addSubview(self.midddleFieldPoint)
+        
+        
+        
+        self.middleLineView.snp.makeConstraints { (make) in
+            make.width.equalToSuperview()
+            make.height.equalTo(1.5)
+            make.center.equalToSuperview()
+        }
+        
+        self.midddleFieldPoint.snp.makeConstraints { (make) in
+            make.width.height.equalTo(4)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(self.footballFieldTableView.snp.top).offset(self.tableViewHeight / 2 - 2)
+        }
     }
     
 }
@@ -237,35 +253,35 @@ extension FootballFieldView: UITableViewDelegate, UITableViewDataSource {
             cell.sectionView.backgroundColor = colorWithHex(hexColorStr: "#32CD32");
         }
         
-        // 中场半圆（上）
-        if indexPath.row == 8 {
-            
-            let centerBottomView: UIView = UIView()
-            centerBottomView.backgroundColor = .white
-            cell.addSubview(centerBottomView)
-            
-            centerBottomView.snp.makeConstraints { (make) in
-                make.width.equalToSuperview()
-                make.height.equalTo(1.5)
-                make.centerX.equalToSuperview()
-                make.bottom.equalTo(cell.snp.bottom)
-            }
-        }
-        
-        // 中场半圆（下）
-        if indexPath.row == 9 {
-            
-            let centerBottomView: UIView = UIView()
-            centerBottomView.backgroundColor = .white
-            cell.addSubview(centerBottomView)
-            
-            centerBottomView.snp.makeConstraints { (make) in
-                make.width.equalToSuperview()
-                make.height.equalTo(1.5)
-                make.centerX.equalToSuperview()
-                make.bottom.equalTo(cell.snp.top)
-            }
-        }
+//        // 中场半圆（上）
+//        if indexPath.row == 8 {
+//
+//            let centerBottomView: UIView = UIView()
+//            centerBottomView.backgroundColor = .white
+//            cell.addSubview(centerBottomView)
+//
+//            centerBottomView.snp.makeConstraints { (make) in
+//                make.width.equalToSuperview()
+//                make.height.equalTo(1.5)
+//                make.centerX.equalToSuperview()
+//                make.bottom.equalTo(cell.snp.bottom)
+//            }
+//        }
+//
+//        // 中场半圆（下）
+//        if indexPath.row == 9 {
+//
+//            let centerBottomView: UIView = UIView()
+//            centerBottomView.backgroundColor = .white
+//            cell.addSubview(centerBottomView)
+//
+//            centerBottomView.snp.makeConstraints { (make) in
+//                make.width.equalToSuperview()
+//                make.height.equalTo(1.5)
+//                make.centerX.equalToSuperview()
+//                make.bottom.equalTo(cell.snp.top)
+//            }
+//        }
         
         return cell
     }
