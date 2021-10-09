@@ -92,7 +92,7 @@ class SwipeDeleteView: UIView {
     
 }
 
-// MARK: - UITableView Delagate & DataSource
+// MARK: - UITableView Delegate & DataSource
 extension SwipeDeleteView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

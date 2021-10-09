@@ -20,8 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.nav = UINavigationController()
-        self.nav?.viewControllers = [HomeVC()]      
+        self.nav?.viewControllers = [HomeVC()]
         
+        /*** 修复Swift5.5后，iOS 13导航栏黑色背景 ***/
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = colorWithHex(hexColorStr: "#EE82EE")
+            self.nav?.navigationBar.standardAppearance = appearance
+            self.nav?.navigationBar.scrollEdgeAppearance = appearance
+        }
+        /*** 修复Swift5.5后，iOS 13导航栏黑色背景 ***/
+            
         self.nav?.navigationBar.isTranslucent = false
         self.nav?.navigationBar.shadowImage = UIImage()
         self.nav?.navigationBar.barTintColor = colorWithHex(hexColorStr: "#EE82EE")     //  #FFC0CB #FE4D4D
