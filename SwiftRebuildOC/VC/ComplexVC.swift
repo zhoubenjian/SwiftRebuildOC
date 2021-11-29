@@ -16,7 +16,7 @@ class ComplexVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "complexVC"
+        self.navigationItem.title = "ComplexVC"
         
         self.view.backgroundColor = .white
         self.createUI()
