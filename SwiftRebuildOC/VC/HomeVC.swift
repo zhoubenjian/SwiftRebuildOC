@@ -21,7 +21,7 @@ class HomeVC: BaseVC {
         self.navigationItem.title = "首页"
         self.view.backgroundColor = .white
     
-        self.styleArray = ["value1", "value2", "subtitle", "default", "adaptiveTableView", "commonCollectionView", "waterCollectionView", "complexVC", "groupVC", "swipeDeleteVC", "sectionVC", "galleryVC", "simpleCalculatorVC", "WKWebView", "ChartsVC", "AntForestVC", "FootballFieldTableVC"]
+        self.styleArray = ["Value1", "Value2", "Subtitle", "Default", "AdaptiveTableView", "CommonCollectionView", "WaterCollectionView", "ComplexVC", "GroupVC", "SwipeDeleteVC", "SectionVC", "GalleryVC", "SimpleCalculatorVC", "WKWebView", "ChartsVC", "AntForestVC", "FootballFieldTableVC"]
         self.createUI()
     }
     

@@ -155,7 +155,7 @@ class ComplexView: UIView {
     // 重写观察者方法
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
-        // 更新hcv约束
+        // 更新tb约束
         self.tb.snp.makeConstraints { (make) in
             make.height.greaterThanOrEqualTo(self.tb.contentSize.height)
         }
