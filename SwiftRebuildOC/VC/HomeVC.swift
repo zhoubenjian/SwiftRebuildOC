@@ -14,14 +14,14 @@ class HomeVC: BaseVC {
     var mainView: HomeView!
     var styleArray: [String]!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = "首页"
         self.view.backgroundColor = .white
-    
-        self.styleArray = ["Value1", "Value2", "Subtitle", "Default", "AdaptiveTableView", "CommonCollectionView", "WaterCollectionView", "ComplexVC", "GroupVC", "SwipeDeleteVC", "SectionVC", "GalleryVC", "SimpleCalculatorVC", "WKWebView", "ChartsVC", "AntForestVC", "FootballFieldTableVC"]
+        
+        self.styleArray = ["Value1", "Value2", "Subtitle", "Default", "AdaptiveTableView", "CommonCollectionView", "WaterCollectionView", "ComplexVC", "GroupVC", "SwipeDeleteVC", "SectionVC", "GalleryVC", "StimpleCalculatorVC", "WKWebView", "ChartsVC", "AntForestVC", "FootballFieldTableVC"]
         self.createUI()
     }
     
