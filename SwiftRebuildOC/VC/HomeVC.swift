@@ -44,12 +44,12 @@ class HomeVC: BaseVC {
         
         self.mainView.skipToCVClosures = {(str) in
             
-            if (str as NSString).isEqual(to: "commonCollectionView") {
+            if "CommonCollectionView".isEqual(str) {
                 
                 let ccVC: CommonCollectionVC = CommonCollectionVC()
                 self.navigationController?.pushViewController(ccVC, animated: true)
                 
-            } else if (str as NSString).isEqual(to: "waterCollectionView") {
+            } else if "WaterCollectionView".isEqual(str) {
                 
                 let wcVC: WaterCollectionVC = WaterCollectionVC()
                 self.navigationController?.pushViewController(wcVC, animated: true)

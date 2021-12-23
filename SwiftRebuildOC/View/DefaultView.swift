@@ -76,7 +76,7 @@ extension DefaultView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if (self.str as NSString).isEqual(to: "value1") {
+        if "Value1".isEqual(self.str) {
             
             let id = "value1"
             var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: id)
@@ -90,7 +90,7 @@ extension DefaultView: UITableViewDelegate, UITableViewDataSource {
             labelProperty(label: cell.detailTextLabel!, bgColor: .white, bgColorStr: "", textStr: getCurrentTime(), textColor: .purple, textColorStr: "", textFont: 13.0, textAlignment: .left)
             return cell
             
-        } else if (self.str as NSString).isEqual(to: "value2") {
+        } else if "Value2".isEqual(self.str) {
             
             let id = "value2"
             var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: id)
@@ -103,7 +103,7 @@ extension DefaultView: UITableViewDelegate, UITableViewDataSource {
             labelProperty(label: cell.detailTextLabel!, bgColor: .white, bgColorStr: "", textStr: getCurrentTime(), textColor: .purple, textColorStr: "", textFont: 13.0, textAlignment: .left)
             return cell
             
-        } else if (self.str as NSString).isEqual(to: "subtitle") {
+        } else if "Subtitle".isEqual(self.str) {
             
             let id = "subtitle"
             var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: id)
@@ -117,7 +117,7 @@ extension DefaultView: UITableViewDelegate, UITableViewDataSource {
             labelProperty(label: cell.detailTextLabel!, bgColor: .white, bgColorStr: "", textStr: getCurrentTime(), textColor: .purple, textColorStr: "", textFont: 13.0, textAlignment: .left)
             return cell
             
-        } else if (self.str as NSString).isEqual(to: "default") {
+        } else if "Default".isEqual(self.str) {
             
             let id = "default"
             var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: id)
@@ -130,7 +130,7 @@ extension DefaultView: UITableViewDelegate, UITableViewDataSource {
             labelProperty(label: cell.textLabel!, bgColor: .white, bgColorStr: "", textStr: self.str, textColor: .blue, textColorStr: "", textFont: 13.0, textAlignment: .left)
             return cell
             
-        } else if (self.str as NSString).isEqual(to: "adaptiveTableView") {
+        } else if "AdaptiveTableView".isEqual(self.str) {
             
             let id = "adapt"
             var cell: AdaptiveTableViewCell! = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as? AdaptiveTableViewCell
