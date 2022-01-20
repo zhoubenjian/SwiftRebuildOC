@@ -136,6 +136,15 @@ func getCurrentTime() -> String {
     return timeStr
 }
 
+func dateToString(date:Date, dateFormat:String = "yyyy-MM-dd HH:mm:ss") -> String {
+    
+    let formatter = DateFormatter()
+    formatter.locale = Locale.init(identifier: "zh_CN")
+    formatter.dateFormat = dateFormat
+    let date = formatter.string(from: date)
+    return date
+}
+
 func secondToHourMinute(second: Int64) -> String {
     
     let h = second / 3600       // 时

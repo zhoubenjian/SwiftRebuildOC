@@ -30,6 +30,7 @@ class GroupView: UIView {
         self.groupTB.backgroundColor = .white
         self.groupTB.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.groupTB.tableFooterView = UIView.init(frame: .zero)
+        self.groupTB.showsVerticalScrollIndicator = false
         self.groupTB.delegate = self
         self.groupTB.dataSource = self
         self.addSubview(self.groupTB)

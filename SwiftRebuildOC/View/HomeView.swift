@@ -50,6 +50,9 @@ class HomeView: UIView {
     typealias SkipToFootballFieldVCClosures = () -> Void
     var skipToFootballFieldVCClosures: SkipToFootballFieldVCClosures!
     
+    typealias SkipToPageRequsetVCClosures = () -> Void
+    var skipToPageRequsetVCClosures: SkipToPageRequsetVCClosures!
+    
     
     
     override init(frame: CGRect) {
@@ -113,7 +116,7 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
         let cell: HomeTableViewCell! = tableView.cellForRow(at: indexPath) as? HomeTableViewCell
         
         switch indexPath.row  {
-        
+            
         case 0...4:
             self.skipToTVClosures(cell.titleLabel.text!)
             
@@ -149,6 +152,9 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
             
         case 16:
             self.skipToFootballFieldVCClosures()
+            
+        case 17:
+            self.skipToPageRequsetVCClosures()
             
         default:
             break
