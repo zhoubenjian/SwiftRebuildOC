@@ -16,4 +16,5 @@ CollectionView画廊效果；
 修改导航栏背景颜色，添加SwipeDeleteVC相关（实现TableViewCell左滑删除）;
 添加仿蚂蚁森林收取能量效果；
 添加等比例梅阿查球场缩略图（ps：恰逢建党100周年；及世界杯预选赛分组，祝国足跻身卡塔尔世界杯正赛）；
+Alamofire，HandyJSON实现有参，无参的GET请求；
 
