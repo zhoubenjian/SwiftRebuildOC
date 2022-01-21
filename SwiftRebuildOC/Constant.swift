@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import PKHUD
+import SwiftDate
 
 // MARK: - 屏幕宽高
 let SCREENWIDTH = UIScreen.main.bounds.width                        // 屏幕宽
@@ -19,6 +20,17 @@ let BOTTOMHEIGHT: CGFloat = (SCREENHEIGHT >= 812) ? 34 : 0          // 刘海屏
 // MARK: - Stadio Giuseppe Meazza: 105 x 65
 let STADIOGIUSEPPEMEAZZALENGTH: CGFloat = 105
 let STADIOGIUSEPPEMEAZZAWIDTH: CGFloat = 65
+
+
+
+enum DateFormatterEnum: String {
+    
+    case YYYY_MM_DD = "yyyy-MM-dd"
+    case YYYY年MM月DD日 = "yyyy年MM月dd日"
+    
+    case YYYY_MM_DD_HH_mm_ss = "yyyy-MM-dd HH:mm:ss"
+    case YYYY年MM月DD人HH时mm分ss秒 = "yyyy年MM月dd日 HH时mm分ss秒"
+}
 
 
 
@@ -74,6 +86,18 @@ func colorWithHex(hexColorStr: String) -> UIColor {
     } else {
         return UIColor.clear
     }
+}
+
+func ISO801ToString(ISO8601: String, dateFormat: String) -> String {
+    
+    let ISODate = ISO8601.toISODate()
+    
+    let dateformatter = DateFormatter()
+    // 自定义时间格式
+    dateformatter.dateFormat = dateFormat
+    let timeStr = dateformatter.string(from: ISODate!.date)
+
+    return timeStr
 }
 
 
@@ -136,13 +160,15 @@ func getCurrentTime() -> String {
     return timeStr
 }
 
-func dateToString(date:Date, dateFormat:String = "yyyy-MM-dd HH:mm:ss") -> String {
+func IOS8601ToLocalTime(timeStamp: String, dateFormat: String = "yyyy-MM-dd HH:mm:ss") -> String {
     
-    let formatter = DateFormatter()
-    formatter.locale = Locale.init(identifier: "zh_CN")
-    formatter.dateFormat = dateFormat
-    let date = formatter.string(from: date)
-    return date
+    let dateInUTC = timeStamp.toISODate(nil, region: .ISO)
+//    let localTime = dateInUTC?.convertTo(region: .init(calendar: Calendars.chinese, zone: Zones.asiaShanghai, locale: Locales.chinese))
+//    let formatter = DateFormatter()
+//    formatter.locale = Locale.init(identifier: "zh_CN")
+//    formatter.dateFormat = dateFormat
+//    let datestr = formatter.string(from: dateInRegion.date! as? Date)
+    return ""
 }
 
 func secondToHourMinute(second: Int64) -> String {

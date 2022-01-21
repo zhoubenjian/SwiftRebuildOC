@@ -27,7 +27,7 @@ class UserBalanceRecord: HandyJSON {
     var type: Int?
     var remark: String?
     var money: Double?
-    var time: Date?
+    var time: String?
     var notice: Int?
     
     required init() {}

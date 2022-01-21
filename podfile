@@ -8,6 +8,7 @@ target 'SwiftRebuildOC' do
     pod 'PKHUD', '~> 5.0'
     pod 'Alamofire'
     pod 'SwiftyJSON', '~> 4.0'
-    pod 'HandyJSON', '~> 5.0.2'  
+    pod 'HandyJSON', '~> 5.0.2'
+    pod 'SwiftDate', '~> 5.0'  
 end
 

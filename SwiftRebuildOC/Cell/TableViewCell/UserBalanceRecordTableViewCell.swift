@@ -97,7 +97,7 @@ class UserBalanceRecordTableViewCell: UITableViewCell {
         
         labelProperty(label: self.moneyLabel, bgColor: .clear, bgColorStr: "", textStr: String(format: "%.1f元", userBalanceRecord.money!), textColor: .clear, textColorStr: "#333333", textFont: 18.0, textAlignment: .right)
         
-        labelProperty(label: self.dateLabel, bgColor: .clear, bgColorStr: "", textStr: getCurrentTime(), textColor: .clear, textColorStr: "#999999", textFont: 14.0, textAlignment: .left)
+        labelProperty(label: self.dateLabel, bgColor: .clear, bgColorStr: "", textStr: ISO801ToString(ISO8601: userBalanceRecord.time!, dateFormat: DateFormatterEnum.YYYY年MM月DD日.rawValue), textColor: .clear, textColorStr: "#999999", textFont: 14.0, textAlignment: .left)
         
         
         labelProperty(label: self.noticeLabel, bgColor: .clear, bgColorStr: "", textStr: "", textColor: .clear, textColorStr: "#999999", textFont: 14.0, textAlignment: .right)
