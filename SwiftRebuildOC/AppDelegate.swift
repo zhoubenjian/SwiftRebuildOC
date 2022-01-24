@@ -21,21 +21,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.nav = UINavigationController()
         self.nav?.viewControllers = [HomeVC()]      // HomeVC()
+        let dic: NSDictionary = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17.0)]
         
         /*** 修复Swift5.5后，iOS 13导航栏黑色背景 ***/
         if #available(iOS 13.0, *) {
+            
             let appearance = UINavigationBarAppearance()
             appearance.backgroundColor = colorWithHex(hexColorStr: "#EE82EE")
+            
+            appearance.titleTextAttributes = dic as! [NSAttributedString.Key : Any]
+            appearance.backgroundEffect = nil
             self.nav?.navigationBar.standardAppearance = appearance
             self.nav?.navigationBar.scrollEdgeAppearance = appearance
+            
+        } else {
+            
+            self.nav?.navigationBar.isTranslucent = false
+            self.nav?.navigationBar.shadowImage = UIImage()
+            self.nav?.navigationBar.barTintColor = colorWithHex(hexColorStr: "#EE82EE")     //  #FFC0CB #FE4D4D
+            self.nav?.navigationBar.titleTextAttributes = dic as? [NSAttributedString.Key: AnyObject]
         }
         /*** 修复Swift5.5后，iOS 13导航栏黑色背景 ***/
             
-        self.nav?.navigationBar.isTranslucent = false
-        self.nav?.navigationBar.shadowImage = UIImage()
-        self.nav?.navigationBar.barTintColor = colorWithHex(hexColorStr: "#EE82EE")     //  #FFC0CB #FE4D4D
-        let dic: NSDictionary = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17.0)]
-        self.nav?.navigationBar.titleTextAttributes = dic as? [NSAttributedString.Key: AnyObject]
         self.window?.rootViewController = nav
         self.window?.makeKeyAndVisible()
         
