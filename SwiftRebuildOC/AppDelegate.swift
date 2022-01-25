@@ -34,15 +34,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.nav?.navigationBar.standardAppearance = appearance
             self.nav?.navigationBar.scrollEdgeAppearance = appearance
             
-        } else {
-            
-            self.nav?.navigationBar.isTranslucent = false
-            self.nav?.navigationBar.shadowImage = UIImage()
-            self.nav?.navigationBar.barTintColor = colorWithHex(hexColorStr: "#EE82EE")     //  #FFC0CB #FE4D4D
-            self.nav?.navigationBar.titleTextAttributes = dic as? [NSAttributedString.Key: AnyObject]
         }
         /*** 修复Swift5.5后，iOS 13导航栏黑色背景 ***/
             
+        self.nav?.navigationBar.isTranslucent = false
+        self.nav?.navigationBar.shadowImage = UIImage()
+        self.nav?.navigationBar.barTintColor = colorWithHex(hexColorStr: "#EE82EE")     //  #FFC0CB #FE4D4D
+        self.nav?.navigationBar.titleTextAttributes = dic as? [NSAttributedString.Key: AnyObject]
         self.window?.rootViewController = nav
         self.window?.makeKeyAndVisible()
         
