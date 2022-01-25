@@ -46,16 +46,14 @@ class SimpleCalculatorView: UIView {
         self.addSubview(self.resultTxt)
         
         self.resultBtn = UIButton()
-        self.resultBtn.layer.masksToBounds = true
-        self.resultBtn.layer.cornerRadius = 10
-        buttonProperty(btn: self.resultBtn, bgColor: .red, bgColorStr: "", titleStr: "=", titleFont: 15.0, titleColorStr: "#000000", titleAlignment: .center)
+        buttonWithAllRound(btn: self.resultBtn, radius: 10)
+        buttonProperty(btn: self.resultBtn, bgColor: .red, bgColorStr: "", titleStr: "=", titleFont: 15.0, titleColor: nil, titleColorStr: "#000000", titleAlignment: .center)
         self.resultBtn.addTarget(self, action: #selector(result), for: .touchUpInside)
         self.addSubview(self.resultBtn)
         
         self.cleanBtn = UIButton()
-        self.cleanBtn.layer.masksToBounds = true
-        self.cleanBtn.layer.cornerRadius = 10
-        buttonProperty(btn: self.cleanBtn, bgColor: .green, bgColorStr: "", titleStr: "C", titleFont: 15.0, titleColorStr: "#000000", titleAlignment: .center)
+        buttonWithAllRound(btn: self.cleanBtn, radius: 10)
+        buttonProperty(btn: self.cleanBtn, bgColor: .green, bgColorStr: "", titleStr: "C", titleFont: 15.0, titleColor: nil, titleColorStr: "#000000", titleAlignment: .center)
         self.cleanBtn.addTarget(self, action: #selector(clean), for: .touchUpInside)
         self.addSubview(self.cleanBtn)
         

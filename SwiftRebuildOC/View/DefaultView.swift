@@ -87,7 +87,7 @@ extension DefaultView: UITableViewDelegate, UITableViewDataSource {
             }
             cell.imageView?.image = UIImage.init(named: "wx")
             labelProperty(label: cell.textLabel!, bgColor: .white, bgColorStr: "", textStr: self.str, textColor: .blue, textColorStr: "", textFont: 13.0, textAlignment: .left)
-            labelProperty(label: cell.detailTextLabel!, bgColor: .white, bgColorStr: "", textStr: getCurrentTime(), textColor: .purple, textColorStr: "", textFont: 13.0, textAlignment: .left)
+            labelProperty(label: cell.detailTextLabel!, bgColor: .white, bgColorStr: "", textStr: currentTime(dateFormat: DateFormatterEnum.YYYY_MM_DD.rawValue), textColor: .purple, textColorStr: "", textFont: 13.0, textAlignment: .left)
             return cell
             
         } else if "Value2".isEqual(self.str) {
@@ -100,7 +100,7 @@ extension DefaultView: UITableViewDelegate, UITableViewDataSource {
                 cell.accessoryType = .detailButton
             }
             labelProperty(label: cell.textLabel!, bgColor: .white, bgColorStr: "", textStr: self.str, textColor: .blue, textColorStr: "", textFont: 13.0, textAlignment: .left)
-            labelProperty(label: cell.detailTextLabel!, bgColor: .white, bgColorStr: "", textStr: getCurrentTime(), textColor: .purple, textColorStr: "", textFont: 13.0, textAlignment: .left)
+            labelProperty(label: cell.detailTextLabel!, bgColor: .white, bgColorStr: "", textStr: currentTime(dateFormat: DateFormatterEnum.YYYY年MM月DD日.rawValue), textColor: .purple, textColorStr: "", textFont: 13.0, textAlignment: .left)
             return cell
             
         } else if "Subtitle".isEqual(self.str) {
@@ -114,7 +114,7 @@ extension DefaultView: UITableViewDelegate, UITableViewDataSource {
             }
             cell.imageView?.image = UIImage.init(named: "wx")
             labelProperty(label: cell.textLabel!, bgColor: .white, bgColorStr: "", textStr: self.str, textColor: .blue, textColorStr: "", textFont: 13.0, textAlignment: .left)
-            labelProperty(label: cell.detailTextLabel!, bgColor: .white, bgColorStr: "", textStr: getCurrentTime(), textColor: .purple, textColorStr: "", textFont: 13.0, textAlignment: .left)
+            labelProperty(label: cell.detailTextLabel!, bgColor: .white, bgColorStr: "", textStr: currentTime(dateFormat: DateFormatterEnum.YYYY_MM_DD_HH_mm_ss.rawValue), textColor: .purple, textColorStr: "", textFont: 13.0, textAlignment: .left)
             return cell
             
         } else if "Default".isEqual(self.str) {

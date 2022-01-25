@@ -14,24 +14,12 @@ import SwiftDate
 // MARK: - 屏幕宽高
 let SCREENWIDTH = UIScreen.main.bounds.width                        // 屏幕宽
 let SCREENHEIGHT = UIScreen.main.bounds.height                      // 屏幕高
-let TABBARHEIGHT: CGFloat = (SCREENHEIGHT >= 812) ? 83 : 49         // 导航栏高度
+let TABBARHEIGHT: CGFloat = (SCREENHEIGHT >= 812) ? 83 : 64         // 导航栏高度
 let CONTENTVIEWHEIGHT: CGFloat = SCREENHEIGHT - TABBARHEIGHT        // 页面高度
 let BOTTOMHEIGHT: CGFloat = (SCREENHEIGHT >= 812) ? 34 : 0          // 刘海屏底部安全高度
 // MARK: - Stadio Giuseppe Meazza: 105 x 65
 let STADIOGIUSEPPEMEAZZALENGTH: CGFloat = 105
 let STADIOGIUSEPPEMEAZZAWIDTH: CGFloat = 65
-
-
-
-enum DateFormatterEnum: String {
-    
-    case YYYY_MM_DD = "yyyy-MM-dd"
-    case YYYY年MM月DD日 = "yyyy年MM月dd日"
-    
-    case YYYY_MM_DD_HH_mm_ss = "yyyy-MM-dd HH:mm:ss"
-    case YYYY年MM月DD人HH时mm分ss秒 = "yyyy年MM月dd日 HH时mm分ss秒"
-}
-
 
 
 
@@ -88,97 +76,6 @@ func colorWithHex(hexColorStr: String) -> UIColor {
     }
 }
 
-func ISO801ToString(ISO8601: String, dateFormat: String) -> String {
-    
-    let ISODate = ISO8601.toISODate()
-    
-    let dateformatter = DateFormatter()
-    // 自定义时间格式
-    dateformatter.dateFormat = dateFormat
-    let timeStr = dateformatter.string(from: ISODate!.date)
-
-    return timeStr
-}
-
-
-
-// MARK: - UILabel相关
-func labelProperty(label: UILabel, bgColor: UIColor , bgColorStr: String, textStr: String, textColor: UIColor, textColorStr: String, textFont: CGFloat, textAlignment: NSTextAlignment) {
-    if bgColorStr.isEmpty {
-        label.backgroundColor = bgColor
-    } else {
-        label.backgroundColor = colorWithHex(hexColorStr: bgColorStr)
-    }
-    label.text = textStr
-    if textColorStr.isEmpty {
-        label.textColor = textColor
-    } else {
-        label.textColor = colorWithHex(hexColorStr: textColorStr)
-    }
-    label.font = UIFont.systemFont(ofSize: textFont)
-    label.textAlignment = textAlignment
-}
-
-
-
-// MARK: - UIButton相关
-func buttonProperty(btn: UIButton, bgColor: UIColor, bgColorStr: String, titleStr: String, titleFont: CGFloat, titleColorStr: String, titleAlignment: NSTextAlignment) {
-    
-    if bgColorStr.isEmpty {
-        btn.backgroundColor = bgColor
-    } else {
-        btn.backgroundColor = colorWithHex(hexColorStr: bgColorStr)
-    }
-    btn.setTitle(titleStr, for: .normal)
-    btn.titleLabel?.font = UIFont.systemFont(ofSize: titleFont)
-    btn.setTitleColor(colorWithHex(hexColorStr: titleColorStr), for: .normal)
-    btn.titleLabel?.textAlignment = titleAlignment
-}
-
-
-
-// MARK: - 当前时间
-func getCurrentTime() -> String {
-    
-    // ①获取格林威治时间（GMT）/ 标准时间，比北京时间早了8个小时
-    let today = Date()
-    
-    // ②获取当前时区
-    let zone = NSTimeZone.system
-    
-    // ③获取当前时区和GMT的时间间隔
-    let interval = zone.secondsFromGMT()
-    
-    // ④获取当前系统时间
-    let now = today.addingTimeInterval(TimeInterval(interval))
-    
-    // ⑤Date转String
-    let dateformatter = DateFormatter()
-    dateformatter.dateFormat = "yyy-MM-dd HH:mm:ss" // 自定义时间格式
-    let timeStr = dateformatter.string(from: now)
-
-    return timeStr
-}
-
-func IOS8601ToLocalTime(timeStamp: String, dateFormat: String = "yyyy-MM-dd HH:mm:ss") -> String {
-    
-    let dateInUTC = timeStamp.toISODate(nil, region: .ISO)
-//    let localTime = dateInUTC?.convertTo(region: .init(calendar: Calendars.chinese, zone: Zones.asiaShanghai, locale: Locales.chinese))
-//    let formatter = DateFormatter()
-//    formatter.locale = Locale.init(identifier: "zh_CN")
-//    formatter.dateFormat = dateFormat
-//    let datestr = formatter.string(from: dateInRegion.date! as? Date)
-    return ""
-}
-
-func secondToHourMinute(second: Int64) -> String {
-    
-    let h = second / 3600       // 时
-    let m = second % 3600 / 60  // 分
-    
-    return String(format: "%02d:%02d", h, m)
-}
-
 
 
 // MARK: - 弹窗显示
@@ -193,6 +90,17 @@ func PKHUDShow(str: String, t: Double) {
 func PKHUDShowError(str: String) {
     HUD.show(.label(str))
     HUD.hide(afterDelay: 2)
+}
+
+
+
+// MARK: - UIView部分圆角
+func viewWithPartRound(vi: UIView!, rc1: UIRectCorner!, rc2: UIRectCorner!, cr1: CGFloat, cr2: CGFloat) {
+    
+//    let maskPath = UIBezierPath.init(roundedRect: vi.bounds, byRoundingCorners: rc1.rawValue & rc2.rawValue, cornerRadii: CGSize(width: cr1, height: cr2))
+//    let maskLayer = CAShapeLayer()
+//    maskLayer.frame = vi.bounds
+//    maskLayer.path = maskPath
 }
 
 

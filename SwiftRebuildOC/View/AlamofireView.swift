@@ -45,27 +45,24 @@ class AlamofireView: UIView {
         self.addSubview(self.paramsTxt)
         
         self.GetWithNoParamsBtn = UIButton()
-        self.GetWithNoParamsBtn.layer.masksToBounds = true
-        self.GetWithNoParamsBtn.layer.cornerRadius = 15
-        buttonProperty(btn: self.GetWithNoParamsBtn, bgColor: .orange, bgColorStr: "", titleStr: "无参Get", titleFont: 13.0, titleColorStr: "#FFFFFF", titleAlignment: .center)
+        buttonWithAllRound(btn: self.GetWithNoParamsBtn, radius: 15)
+        buttonProperty(btn: self.GetWithNoParamsBtn, bgColor: .orange, bgColorStr: "", titleStr: "无参Get", titleFont: 13.0, titleColor: nil, titleColorStr: "#FFFFFF", titleAlignment: .center)
         /*** 无参Get点击方法 ***/
         self.GetWithNoParamsBtn.addTarget(self, action: #selector(GetWithNoParams), for: .touchUpInside)
         /*** 无参Get点击方法 ***/
         self.addSubview(self.GetWithNoParamsBtn)
         
         self.cleanBtn = UIButton()
-        self.cleanBtn.layer.masksToBounds = true
-        self.cleanBtn.layer.cornerRadius = 15
-        buttonProperty(btn: self.cleanBtn, bgColor: .blue, bgColorStr: "", titleStr: "清空", titleFont: 13.0, titleColorStr: "#FFFFFF", titleAlignment: .center)
+        buttonWithAllRound(btn: self.cleanBtn, radius: 15)
+        buttonProperty(btn: self.cleanBtn, bgColor: .blue, bgColorStr: "", titleStr: "清空", titleFont: 13.0, titleColor: nil, titleColorStr: "#FFFFFF", titleAlignment: .center)
         /*** 清空 ***/
         self.cleanBtn.addTarget(self, action: #selector(Clean), for: .touchUpInside)
         /*** 清空 ***/
         self.addSubview(self.cleanBtn)
         
         self.submitBtn = UIButton()
-        self.submitBtn.layer.masksToBounds = true
-        self.submitBtn.layer.cornerRadius = 25
-        buttonProperty(btn: self.submitBtn, bgColor: .purple, bgColorStr: "", titleStr: "发送请求", titleFont: 18.0, titleColorStr: "#FFFFFF", titleAlignment: .center)
+        buttonWithAllRound(btn: self.submitBtn, radius: 25)
+        buttonProperty(btn: self.submitBtn, bgColor: .purple, bgColorStr: "", titleStr: "发送请求", titleFont: 18.0, titleColor: nil, titleColorStr: "#FFFFFF", titleAlignment: .center)
         self.submitBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
         /*** 发送请求 ***/
         self.submitBtn.addTarget(self, action: #selector(Submit), for: .touchUpInside)

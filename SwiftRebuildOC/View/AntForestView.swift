@@ -40,21 +40,19 @@ class AntForestView: UIView {
         for i in 0..<NUM_OF_ENERGY{
             
             self.totaLEnergyLabel = UILabel()
-            self.totaLEnergyLabel.layer.masksToBounds = true
-            self.totaLEnergyLabel.layer.cornerRadius = 20
+            labelWithAllRound(label: self.totaLEnergyLabel, radius: 20)
             labelProperty(label: self.totaLEnergyLabel, bgColor: .white, bgColorStr: "", textStr: "0g", textColor: .green, textColorStr: "", textFont: 15.0, textAlignment: .center)
             self.addSubview(self.totaLEnergyLabel)
             
             let btn = UIButton()
             // 添加收取能量方法
             btn.addTarget(self, action: #selector(gain), for: .touchUpInside)
-            buttonProperty(btn: btn, bgColor: .green, bgColorStr: "", titleStr: "", titleFont: 15, titleColorStr: "#0000CD", titleAlignment: .center)
+            buttonProperty(btn: btn, bgColor: .green, bgColorStr: "", titleStr: "", titleFont: 15, titleColor: nil, titleColorStr: "#0000CD", titleAlignment: .center)
             btn.alpha = 0.5
             btn.isEnabled = false   // 不可点击
             btn.setTitle("绿色\n能量\(i)", for: .normal)
             btn.titleLabel?.numberOfLines = 0
-            btn.layer.cornerRadius = 30
-            btn.layer.masksToBounds = true
+            buttonWithAllRound(btn: btn, radius: 30)
             btnArray.append(btn)
             self.addSubview(btn)
             
@@ -160,7 +158,7 @@ class AntForestView: UIView {
                     self.btnArray[index].isEnabled = true
                     self.btnArray[index].alpha = 1.0
                     
-                    buttonProperty(btn: self.btnArray[index], bgColor: .green, bgColorStr: "", titleStr: String(format: "%d克", energyValue), titleFont: 15.0, titleColorStr: "#0000CD", titleAlignment: .center)
+                    buttonProperty(btn: self.btnArray[index], bgColor: .green, bgColorStr: "", titleStr: String(format: "%d克", energyValue), titleFont: 15.0, titleColor: nil, titleColorStr: "#0000CD", titleAlignment: .center)
                     
                 }
                 
@@ -172,7 +170,7 @@ class AntForestView: UIView {
                 DispatchQueue.main.async {
                     
                     // 更改能量球倒计时
-                    buttonProperty(btn: self.btnArray[index], bgColor: .green, bgColorStr: "", titleStr: String(format: "还剩\n%@", secondToHourMinute(second: Int64(time))), titleFont: 15.0, titleColorStr: "#0000CD", titleAlignment: .center)
+                    buttonProperty(btn: self.btnArray[index], bgColor: .green, bgColorStr: "", titleStr: String(format: "还剩\n%@", secondToHourMinute(second: Int64(time))), titleFont: 15.0, titleColor: nil, titleColorStr: "#0000CD", titleAlignment: .center)
                     
                 }
                 
