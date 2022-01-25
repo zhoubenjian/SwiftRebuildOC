@@ -79,6 +79,8 @@
 		E4FFB251279F979F0067540D /* DateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FFB250279F979F0067540D /* DateTool.swift */; };
 		E4FFB253279F9A630067540D /* LabelTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FFB252279F9A630067540D /* LabelTool.swift */; };
 		E4FFB255279F9F970067540D /* ButtonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FFB254279F9F970067540D /* ButtonTool.swift */; };
+		E4FFB257279FAB8F0067540D /* PagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FFB256279FAB8F0067540D /* PagesVC.swift */; };
+		E4FFB259279FABC00067540D /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FFB258279FABC00067540D /* PagesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +181,8 @@
 		E4FFB250279F979F0067540D /* DateTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTool.swift; sourceTree = "<group>"; };
 		E4FFB252279F9A630067540D /* LabelTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTool.swift; sourceTree = "<group>"; };
 		E4FFB254279F9F970067540D /* ButtonTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTool.swift; sourceTree = "<group>"; };
+		E4FFB256279FAB8F0067540D /* PagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesVC.swift; sourceTree = "<group>"; };
+		E4FFB258279FABC00067540D /* PagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +303,7 @@
 				E4892DF526468801001D3298 /* FootballFieldVC.swift */,
 				E47019E72796604000DD7936 /* AlamofireVC.swift */,
 				E411E01D27991A38007C67A7 /* PageRequsetVC.swift */,
+				E4FFB256279FAB8F0067540D /* PagesVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				E4BA81DC268B3D0100F2E230 /* CornersView.swift */,
 				E47019E92796605700DD7936 /* AlamofireView.swift */,
 				E411E01F27991A65007C67A7 /* PageRequsetView.swift */,
+				E4FFB258279FABC00067540D /* PagesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -656,6 +662,7 @@
 				E461C455246B8A7A00032911 /* CommonCollectionView.swift in Sources */,
 				E47019EE279699B300DD7936 /* ALLURL.swift in Sources */,
 				E461C457246B8A7A00032911 /* ComplexView.swift in Sources */,
+				E4FFB257279FAB8F0067540D /* PagesVC.swift in Sources */,
 				E45397E5247B67A00094925C /* GalleryVC.swift in Sources */,
 				E461C45E246B8A8700032911 /* WaterCollectionVC.swift in Sources */,
 				E4BA81DD268B3D0100F2E230 /* CornersView.swift in Sources */,
@@ -676,6 +683,7 @@
 				E47019EA2796605700DD7936 /* AlamofireView.swift in Sources */,
 				E47019FF2796BA7600DD7936 /* BaseModel.swift in Sources */,
 				E413091E2626F2EC005114A3 /* AntForestView.swift in Sources */,
+				E4FFB259279FABC00067540D /* PagesView.swift in Sources */,
 				E4892E0026468BDF001D3298 /* FootballFieldTableViewCell.swift in Sources */,
 				E4FFB255279F9F970067540D /* ButtonTool.swift in Sources */,
 			);
