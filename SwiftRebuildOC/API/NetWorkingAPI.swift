@@ -48,4 +48,16 @@ class NetWorkingAPI: NSObject {
             resultClosures(response)
         }
     }
+    
+    
+    
+    // 所有总统
+    func AllPresident(resultClosures: @escaping ResponseResultClosures) {
+        
+        AF.request(ALL_PRESIDENTS_LIST_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil).validate().responseString {
+            response in
+            
+            resultClosures(response);
+        }
+    }
 }

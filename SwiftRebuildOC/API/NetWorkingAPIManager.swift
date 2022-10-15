@@ -13,6 +13,10 @@ typealias ConfigResultClousures = (Bool, PolicyModel) -> Void
 typealias UserCardResultClosures = (Bool, CardInfoModel) -> Void
 typealias AccountDetailResultClosures = (Bool, AccountDetailModel) -> Void
 
+typealias AllPresidentResultClosures = (Bool, PresidentModel) -> Void
+
+
+
 class NetWorkingAPIManager: NSObject {
     
     var netWorkingAPI: NetWorkingAPI!    
@@ -137,6 +141,44 @@ class NetWorkingAPIManager: NSObject {
                     
                 } else {
                     
+                    PKHUDShow(str: "类型转换异常")
+                }
+                break
+                
+            case .failure(let error):
+                
+                print("\(error)")
+                PKHUDShow(str: "网络异常...")
+                break
+            }
+        }
+    }
+    
+    
+    
+    // 所有总统
+    func AllPresident(resultClosures: @escaping AllPresidentResultClosures) {
+        self.createAPI().AllPresident { response in
+            switch response.result {
+                
+            case .success(let json):
+                
+                // UTF-8编码
+                let JsonString = json.cString(using: String.Encoding.isoLatin1)!
+                let utf8JsonString = String(cString: JsonString, encoding: String.Encoding.utf8)
+                
+                if let responseObject = JSONDeserializer<PresidentModel>.deserializeFrom(json: utf8JsonString, designatedPath: nil) {
+                    
+                    if responseObject.status == 0 {
+                        
+                        resultClosures(true, responseObject)
+                        
+                    } else {
+                        
+                        PKHUDShow(str: "\(responseObject.view ?? "")")
+                    }
+                    
+                } else {
                     PKHUDShow(str: "类型转换异常")
                 }
                 break

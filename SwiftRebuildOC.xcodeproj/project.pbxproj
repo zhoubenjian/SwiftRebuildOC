@@ -67,6 +67,7 @@
 		E4892DF626468801001D3298 /* FootballFieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4892DF526468801001D3298 /* FootballFieldVC.swift */; };
 		E4892DFB2646881E001D3298 /* FootballFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4892DFA2646881E001D3298 /* FootballFieldView.swift */; };
 		E4892E0026468BDF001D3298 /* FootballFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4892DFF26468BDF001D3298 /* FootballFieldTableViewCell.swift */; };
+		E491055F28FA57940055A65A /* PresidentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491055E28FA57940055A65A /* PresidentModel.swift */; };
 		E4BA81DD268B3D0100F2E230 /* CornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BA81DC268B3D0100F2E230 /* CornersView.swift */; };
 		E4C522D4246E78350056333B /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C522D3246E78350056333B /* GroupVC.swift */; };
 		E4C522D6246E78470056333B /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C522D5246E78470056333B /* GroupView.swift */; };
@@ -169,6 +170,7 @@
 		E4892DF526468801001D3298 /* FootballFieldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballFieldVC.swift; sourceTree = "<group>"; };
 		E4892DFA2646881E001D3298 /* FootballFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballFieldView.swift; sourceTree = "<group>"; };
 		E4892DFF26468BDF001D3298 /* FootballFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballFieldTableViewCell.swift; sourceTree = "<group>"; };
+		E491055E28FA57940055A65A /* PresidentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresidentModel.swift; sourceTree = "<group>"; };
 		E4BA81DC268B3D0100F2E230 /* CornersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornersView.swift; sourceTree = "<group>"; };
 		E4C522D3246E78350056333B /* GroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
 		E4C522D5246E78470056333B /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 				E47019F72796ACA000DD7936 /* PolicyModel.swift */,
 				E44AADF92797E912006277E2 /* CardInfoModel.swift */,
 				E411E01B279911D5007C67A7 /* AccountDetailModel.swift */,
+				E491055E28FA57940055A65A /* PresidentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				E461C455246B8A7A00032911 /* CommonCollectionView.swift in Sources */,
 				E47019EE279699B300DD7936 /* ALLURL.swift in Sources */,
 				E461C457246B8A7A00032911 /* ComplexView.swift in Sources */,
+				E491055F28FA57940055A65A /* PresidentModel.swift in Sources */,
 				E4FFB257279FAB8F0067540D /* PagesVC.swift in Sources */,
 				E45397E5247B67A00094925C /* GalleryVC.swift in Sources */,
 				E461C45E246B8A8700032911 /* WaterCollectionVC.swift in Sources */,

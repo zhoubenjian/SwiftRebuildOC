@@ -14,7 +14,7 @@ class SwipeDeleteView: UIView {
     var contentView: UIView!
     var tb: UITableView!
     
-    var dataArray: [String]!
+    var dataArray: [President]!
     
 
     override init(frame: CGRect) {
@@ -64,7 +64,7 @@ class SwipeDeleteView: UIView {
         }
     }
     
-    func loadData(dataArray: [String]) {
+    func loadData(dataArray: [President]) {
         self.dataArray = dataArray
         
         // 刷新tb
@@ -106,7 +106,8 @@ extension SwipeDeleteView: UITableViewDelegate, UITableViewDataSource {
             cell = UITableViewCell.init(style: .value1, reuseIdentifier: identifier)
             cell.selectionStyle = .none
         }
-        labelProperty(label: cell.textLabel!, bgColor: .white, bgColorStr: "", textStr: "\(indexPath.row + 1). \(self.dataArray[indexPath.row])", textColor: .brown, textColorStr: "", textFont: 15.0, textAlignment: .left)
+        let president: President = self.dataArray[indexPath.row]
+        labelProperty(label: cell.textLabel!, bgColor: .white, bgColorStr: "", textStr: "\(indexPath.row + 1). \(NSString(format: "%@", president.presidentName!))", textColor: .brown, textColorStr: "", textFont: 15.0, textAlignment: .left)
         return cell;
     }
     
