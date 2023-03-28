@@ -96,6 +96,7 @@ extension GroupView: UITableViewDelegate, UITableViewDataSource {
     // MARK: - 点击效果
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data: [String] = self.dataDic[indexPath.section]!
+        PKHUDShow(str: String(format: "%@\n%@", self.titleArray[indexPath.section], data[indexPath.row]))
         print("第\(indexPath.section + 1)组, 第\(indexPath.row + 1)行————\(self.titleArray[indexPath.section]): \(data[indexPath.row])");
     }
 
