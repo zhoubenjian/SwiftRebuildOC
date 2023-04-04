@@ -56,6 +56,9 @@ class HomeView: UIView {
     typealias SkipToPageRequsetVCClosures = () -> Void
     var skipToPageRequsetVCClosures: SkipToPageRequsetVCClosures!
     
+    typealias SkipToChatGPTVCClosures = () -> Void
+    var skipToChatGPTVCClosures: SkipToChatGPTVCClosures!
+    
     
     
     override init(frame: CGRect) {
@@ -161,6 +164,9 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
             
         case 18:
             self.skipToPageRequsetVCClosures()
+            
+        case 19:
+            self.skipToChatGPTVCClosures();
             
         default:
             break

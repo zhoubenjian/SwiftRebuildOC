@@ -35,3 +35,11 @@ let ACCOUNT_DETAIL_LIST_URL: String = LOCAL_HEAD + "/api/user/accountDetail"
 // 所有总统
 let ALL_PRESIDENTS_LIST_URL = CENTOS_URL + "/president/all"
 
+
+
+// ChatGPT
+let CHATGPT_URL = "http://zhouyongxyz.com/v1/chat/completions"
+// "https://api.openai.com/v1/chat/completions"
+
+
+

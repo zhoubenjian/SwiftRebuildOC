@@ -18,17 +18,17 @@ class NetWorkingAPI: NSObject {
     // 用户协议 & 隐私协议
     func UserPrivacyPolicy(resultClosures: @escaping ResponseResultClosures) {
         
-//        let headParams: HTTPHeaders = ["Content-Type": "application/x-www-form-urlencoded;charset=UTF-8", "Accept": "application/json"]
+        //        let headParams: HTTPHeaders = ["Content-Type": "application/x-www-form-urlencoded;charset=UTF-8", "Accept": "application/json"]
         
         AF.request(USER_PRIVACY_POLICY_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).validate().responseString { response in
             
             resultClosures(response)
         }
     }
-        
+    
     // 用户卡
     func LocalUserCards(userId: Int64, keycode: String, phoneType: Int, sdkInt: Int, resultClosures: @escaping ResponseResultClosures) {
-            
+        
         let params: Dictionary<String, Any> = ["userId": userId, "keycode": keycode, "phoneType": phoneType, "sdkInt": sdkInt]
         let headParams: HTTPHeaders = ["Content-Type": "application/x-www-form-urlencoded;charset=UTF-8", "Accept": "application/json"]
         

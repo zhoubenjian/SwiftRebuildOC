@@ -21,7 +21,7 @@ class HomeVC: BaseVC {
         self.navigationItem.title = "首页"
         self.view.backgroundColor = .white
         
-        self.styleArray = ["Value1", "Value2", "Subtitle", "Default", "AdaptiveTableView", "CommonCollectionView", "WaterCollectionView", "ComplexVC", "GroupVC", "SwipeDeleteVC", "SectionVC", "GalleryVC", "SimpleCalculatorVC", "WKWebView", "ChartsVC", "AntForestVC", "FootballFieldTableVC", "PagesVC", "PageRequsetVC"]
+        self.styleArray = ["Value1", "Value2", "Subtitle", "Default", "AdaptiveTableView", "CommonCollectionView", "WaterCollectionView", "ComplexVC", "GroupVC", "SwipeDeleteVC", "SectionVC", "GalleryVC", "SimpleCalculatorVC", "WKWebView", "ChartsVC", "AntForestVC", "FootballFieldTableVC", "PagesVC", "PageRequsetVC", "ChatGPTVC"]
         self.createUI()
     }
     
@@ -139,5 +139,10 @@ class HomeVC: BaseVC {
             self.navigationController?.pushViewController(prVC, animated: true)
         }
         
+        self.mainView.skipToChatGPTVCClosures = {
+            
+            let cgVC: ChatGPTVC = ChatGPTVC()
+            self.navigationController?.pushViewController(cgVC, animated: true)
+        }
     }
 }
