@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (5.4.4)
+  - Charts (3.3.0):
+    - Charts/Core (= 3.3.0)
+  - Charts/Core (3.3.0)
+  - HandyJSON (5.0.2)
+  - PKHUD (5.3.0)
+  - SnapKit (5.0.1)
+  - SwiftDate (6.3.1)
+  - SwiftyJSON (5.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - Charts
+  - HandyJSON (~> 5.0.2)
+  - PKHUD (~> 5.3.0)
+  - SnapKit (~> 5.0.0)
+  - SwiftDate (~> 6.3.0)
+  - SwiftyJSON (~> 5.0.1)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Charts
+    - HandyJSON
+    - PKHUD
+    - SnapKit
+    - SwiftDate
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Charts: e0dd4cd8f257bccf98407b58183ddca8e8d5b578
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+
+PODFILE CHECKSUM: 61412c1157e9c25e2d5c8ed880b6c01060bf8ed2
+
+COCOAPODS: 1.11.2
